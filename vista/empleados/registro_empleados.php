@@ -1,7 +1,7 @@
 <div class="col-md-12">
           <div class="box box-warning box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Collapsable</h3>
+              <h3 class="box-title">Registro Empleado</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -78,19 +78,19 @@
                   </div> 
                     <div class="col-lg-6">
                      <label for="">Nombre</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombreBenef" class="form-control">
                     </div>
                     <div class="col-lg-6">
                      <label for="">Documento</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_dniBenef" class="form-control">
                     </div>
                     <div class="col-lg-6">
                      <label for="">Direccion</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_direccionBenef" class="form-control">
                     </div>
                     <div class="col-lg-6">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_movilBenef" class="form-control">
                     </div>
                     
                     <div class="col-md-12">
@@ -108,19 +108,19 @@
                 <div class="row">
                   <div class="col-lg-6">
                      <label for="">Nombre Esposa</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_NombreEsposa" class="form-control">
                   </div>
                   <div class="col-lg-6">
                      <label for="">documento</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_dniEsposa" class="form-control">
                   </div>
                   <div class="col-lg-8">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_movilEsposa" class="form-control">
                   </div>
                   <div class="col-lg-4">
                      <label for="">Hijos Cantidad</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_hijos" class="form-control">
                   </div>
                 </div>
                
@@ -137,10 +137,10 @@
                   </div>
                   <div class="col-lg-6">
                      <label for="">Registro Conducir</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="text" name="nombre" id="txt_registro" class="form-control">
                   </div> <div class="col-lg-4">
                      <label for="">fecha Vencimiento</label>
-                     <input type="date" name="nombre" id="txt_cargo" class="form-control">
+                     <input type="date" name="nombre" id="txt_vencimiento" class="form-control">
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <label for="">Observaciones</label>
-                    <textarea name="" id="txt_descripcionMante" cols="50" rows="3" class="form-control"></textarea>
+                    <textarea name="" id="txt_observacion" cols="50" rows="3" class="form-control"></textarea>
                   </div>
                 </div>
 
@@ -161,7 +161,7 @@
           <!-- nav-tabs-custom -->
         </div>
         <div class="col-lg-12" style="text-align:center">
-       <button class="btn btn-success btn-lg" onclick="registrarHistorial()">Registrar</button>
+       <button class="btn btn-success btn-lg" onclick="registrarEmpleado()">Registrar</button>
         </div>
             </div>
             <!-- /.box-body -->

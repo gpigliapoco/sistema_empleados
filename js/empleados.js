@@ -66,4 +66,49 @@ function abrirModalRegistro(){
 	$("#modal_registro_paciente").modal("show");
 }
 
+function registrarHistorial(){
+	var nombre=$("#txt_nombre").val();
+	var apellido=$("#txt_apellido").val();
+	var direccion=$("#txt_direccion").val();
+	var ciudad=$("#txt_ciudad").val();
+	var dni=$("#txt_dni").val();
+	var movil=$("#txt_movil").val();
+	var sexo=$("#cbm_sexo").val();
+	var nacimiento=$("#txt_fechaN").val();
+	var estado=$("#cbm_estadoCivil").val();
+	var idConsulta=$("#txt_idConsulta").val();
+	var idConsulta=$("#txt_idConsulta").val();
+	var idConsulta=$("#txt_idConsulta").val();
+	var idConsulta=$("#txt_idConsulta").val();
+	var idConsulta=$("#txt_idConsulta").val();
+
+
+
+
+	$.ajax({
+		url: "../controlador/historial/control_registrar_fua.php",
+		type: "POST",
+		data: {
+			idHistoria:idHistoria,
+			idConsulta:idConsulta,
+			
+		}
+	}).done(function(resp){
+		
+		if(resp>0){
+			registrar_detalle_procedimiento(parseInt(resp));
+			registrar_detalle_medicamento(parseInt(resp));
+			registrar_detalle_insumos(parseInt(resp));
+			Swal.fire("Mensaje De Confirmacion","Datos correctamente, Nuevo Usuario Registrado","success")            
+				.then ( ( value ) =>  {
+					$("#contenido_principal").load("historial/vista_historialManten.php");
+			
+			});
+		}
+		else{
+			Swal.fire("Mensaje De Confirmacion","no se puede registrar fua","warning");
+		}
+	})
+}
+
 

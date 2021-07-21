@@ -142,3 +142,8 @@ function registrarHistorial(){
 }
 
 
+//function ver(){
+//	var foto=$("#file").val();
+
+//	alert(foto)
+//}

@@ -14,9 +14,19 @@
     $estado = (isset($_POST['estado'])) ? $_POST['estado'] : '';
     $ingreso = (isset($_POST['ingreso'])) ? $_POST['ingreso'] : '';
     $cargo = (isset($_POST['cargo'])) ? $_POST['cargo'] : '';
-    $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
-    $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
-    $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
+    $nombreBenef = (isset($_POST['nombreBenef'])) ? $_POST['nombreBenef'] : '';
+    $direccionBenef = (isset($_POST['direccionBenef'])) ? $_POST['direccionBenef'] : '';
+    $dniBenef = (isset($_POST['dniBenef'])) ? $_POST['dniBenef'] : '';
+    $movilBenef = (isset($_POST['movilBenef'])) ? $_POST['movilBenef'] : '';
+    $nombreEsposa = (isset($_POST['nombreEsposa'])) ? $_POST['nombreEsposa'] : '';
+    $dniEsposa = (isset($_POST['dniEsposa'])) ? $_POST['dniEsposa'] : '';
+    $movilEsposa = (isset($_POST['movilEsposa'])) ? $_POST['movilEsposa'] : '';
+    $hijos = (isset($_POST['hijos'])) ? $_POST['hijos'] : '';
+    $registroCombo = (isset($_POST['registroCombo'])) ? $_POST['registroCombo'] : '';
+    $registro = (isset($_POST['registro'])) ? $_POST['registro'] : '';
+    $vencimiento = (isset($_POST['vencimiento'])) ? $_POST['vencimiento'] : '';
+    $observacion = (isset($_POST['observacion'])) ? $_POST['observacion'] : '';
+
 
     date_default_timezone_set("America/Caracas");
     $fechaHora = date('Y-m-d h:i:s');

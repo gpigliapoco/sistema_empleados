@@ -161,7 +161,7 @@
           <!-- nav-tabs-custom -->
         </div>
         <div class="col-lg-12" style="text-align:center">
-       <button class="btn btn-success btn-lg" onclick="registrarEmpleado()">Registrar</button>
+       <button class="btn btn-success btn-lg" onclick="ver()">Registrar</button>
         </div>
             </div>
             <!-- /.box-body -->
@@ -192,6 +192,12 @@
             }
         }
         document.getElementById('file').addEventListener('change', archivo, false);
+
+        function ver(){
+	    
+
+      	alert(file);
+}
     </script>
 
       

@@ -16,15 +16,15 @@
                   <div class="col-md-6">
                     <div class="form-group">
                      <label for="">Nombre</label>
-                     <input type="text" name="nombre" id="txt_nombre" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombre" placeholder="Nombre" class="form-control">
                     </div>
                     <div class="form-group">
                      <label for="">Direccion</label>
-                     <input type="text" name="nombre" id="txt_direccion" class="form-control">
+                     <input type="text" name="nombre" id="txt_direccion" placeholder="Direccion" class="form-control">
                     </div>
                     <div class="form-group">
                      <label for="">Documento</label>
-                     <input type="text" name="nombre" id="txt_dni" class="form-control">
+                     <input type="text" name="nombre" id="txt_dni" placeholder="Documento" class="form-control">
                     </div>
                     <div class="form-group">
                      <label for="">Foto</label>
@@ -35,15 +35,15 @@
                   <div class="col-md-6">
                     <div class="form-group">
                      <label for="">Apellido</label>
-                     <input type="text" name="nombre" id="txt_apellido" class="form-control">
+                     <input type="text" name="nombre" id="txt_apellido" placeholder="Apellido" class="form-control">
                     </div>
                     <div class="form-group">
                      <label for="">Ciudad</label>
-                     <input type="text" name="nombre" id="txt_ciudad" class="form-control">
+                     <input type="text" name="nombre" id="txt_ciudad" placeholder="Ciudad" class="form-control">
                     </div>
                     <div class="form-group">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_movil" class="form-control">
+                     <input type="text" name="nombre" id="txt_movil" placeholder="Movil" class="form-control">
                     </div>
                     <div class="form-group">
                      <label for="">Sexo</label>
@@ -78,19 +78,19 @@
                   </div> 
                     <div class="col-lg-6">
                      <label for="">Nombre</label>
-                     <input type="text" name="nombre" id="txt_nombreBenef" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombreBenef" placeholder="Nombre" class="form-control">
                     </div>
                     <div class="col-lg-6">
                      <label for="">Documento</label>
-                     <input type="text" name="nombre" id="txt_dniBenef" class="form-control">
+                     <input type="text" name="nombre" id="txt_dniBenef" placeholder="Documento" class="form-control">
                     </div>
                     <div class="col-lg-6">
                      <label for="">Direccion</label>
-                     <input type="text" name="nombre" id="txt_direccionBenef" class="form-control">
+                     <input type="text" name="nombre" id="txt_direccionBenef" placeholder="Direccion" class="form-control">
                     </div>
                     <div class="col-lg-6">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_movilBenef" class="form-control">
+                     <input type="text" name="nombre" id="txt_movilBenef" placeholder="Movil" class="form-control">
                     </div>
                     
                     <div class="col-md-12">
@@ -108,19 +108,19 @@
                 <div class="row">
                   <div class="col-lg-6">
                      <label for="">Nombre Esposa</label>
-                     <input type="text" name="nombre" id="txt_NombreEsposa" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombreEsposa" placeholder="Nombre" class="form-control">
                   </div>
                   <div class="col-lg-6">
                      <label for="">documento</label>
-                     <input type="text" name="nombre" id="txt_dniEsposa" class="form-control">
+                     <input type="text" name="nombre" id="txt_dniEsposa" placeholder="Documento" class="form-control">
                   </div>
                   <div class="col-lg-8">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_movilEsposa" class="form-control">
+                     <input type="text" name="nombre" id="txt_movilEsposa" placeholder="Movil" class="form-control">
                   </div>
                   <div class="col-lg-4">
                      <label for="">Hijos Cantidad</label>
-                     <input type="text" name="nombre" id="txt_hijos" class="form-control">
+                     <input type="text" name="nombre" id="txt_hijos" placeholder="Cantidad" class="form-control">
                   </div>
                 </div>
                
@@ -137,7 +137,7 @@
                   </div>
                   <div class="col-lg-6">
                      <label for="">Registro Conducir</label>
-                     <input type="text" name="nombre" id="txt_registro" class="form-control">
+                     <input type="text" name="nombre" id="txt_registro" placeholder="Numero de Registro" class="form-control">
                   </div> <div class="col-lg-4">
                      <label for="">fecha Vencimiento</label>
                      <input type="date" name="nombre" id="txt_vencimiento" class="form-control">

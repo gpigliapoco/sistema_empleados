@@ -76,11 +76,20 @@ function registrarHistorial(){
 	var sexo=$("#cbm_sexo").val();
 	var nacimiento=$("#txt_fechaN").val();
 	var estado=$("#cbm_estadoCivil").val();
-	var idConsulta=$("#txt_idConsulta").val();
-	var idConsulta=$("#txt_idConsulta").val();
-	var idConsulta=$("#txt_idConsulta").val();
-	var idConsulta=$("#txt_idConsulta").val();
-	var idConsulta=$("#txt_idConsulta").val();
+	var ingreso=$("#txt_ingreso").val();
+	var cargo=$("#txt_cargo").val();
+	var nombreBenef=$("#txt_nombreBenef").val();
+	var dniBenef=$("#txt_dniBenef").val();
+	var direccionBenef=$("#txt_direccionBenef").val();
+	var movilBenef=$("#txt_movilBenef").val();
+	var nombreEsposa=$("#txt_nombreEsposa").val();
+	var dniEsposa=$("#txt_dniEsposa").val();
+	var movilEsposa=$("#txt_movilEsposa").val();
+	var hijos=$("#txt_hijos").val();
+	var registroCombo=$("#cbm_registro").val();
+	var registro=$("#txt_registro").val();
+	var vencimiento=$("#txt_vencimiento").val();
+	var observacion=$("#txt_observacion").val();
 
 
 
@@ -89,16 +98,37 @@ function registrarHistorial(){
 		url: "../controlador/historial/control_registrar_fua.php",
 		type: "POST",
 		data: {
-			idHistoria:idHistoria,
-			idConsulta:idConsulta,
+			nombre:nombre,
+			apellido:apellido,
+			direccion:direccion,
+			ciudad:ciudad,
+			dni:dni,
+			movil:movil,
+			sexo:sexo,
+			nacimiento:nacimiento,
+			estado:estado,
+			ingreso:ingreso,
+			cargo:cargo,
+			nombreBenef:nombreBenef,
+			dniBenef:dniBenef,
+			direccionBenef:direccionBenef,
+			movilBenef:movilBenef,
+			nombreEsposa:nombreEsposa,
+			dniEsposa:dniEsposa,
+			movilEsposa:movilEsposa,
+			hijos:hijos,
+			registroCombo:registroCombo,
+			registro:registro,
+			vencimiento:vencimiento,
+			observacion:observacion
+
+			
 			
 		}
 	}).done(function(resp){
 		
 		if(resp>0){
-			registrar_detalle_procedimiento(parseInt(resp));
-			registrar_detalle_medicamento(parseInt(resp));
-			registrar_detalle_insumos(parseInt(resp));
+			
 			Swal.fire("Mensaje De Confirmacion","Datos correctamente, Nuevo Usuario Registrado","success")            
 				.then ( ( value ) =>  {
 					$("#contenido_principal").load("historial/vista_historialManten.php");

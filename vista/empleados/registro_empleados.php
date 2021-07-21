@@ -26,10 +26,15 @@
                      <label for="">Documento</label>
                      <input type="text" name="nombre" id="txt_dni" placeholder="Documento" class="form-control">
                     </div>
-                    <div class="form-group">
-                     <label for="">Foto</label>
-                     <input type="file" name="nombre" id="file" class="form-control">
-                     <output id="list" style="margin-top:0px"></output>
+                    <div class="col-lg-12">
+                    <div class="card" >
+                      <img src="../imagenes/avatar.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -173,31 +178,31 @@
           <!-- /.box -->
         </div>
         <script>
-        function archivo(evt) {
-            var files = evt.target.files; // FileList object
-            // Obtenemos la imagen del campo "file".
-            for (var i = 0, f; f = files[i]; i++) {
-                //Solo admitimos imágenes.
-                if (!f.type.match('image.*')) {
-                    continue;
-                }
-                var reader = new FileReader();
-                reader.onload = (function (theFile) {
-                    return function (e) {
-                        // Insertamos la imagen
-                        document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="200px" title="', escape(theFile.name), '"/>'].join('');
-                    };
-                })(f);
-                reader.readAsDataURL(f);
-            }
-        }
-        document.getElementById('file').addEventListener('change', archivo, false);
+//         function archivo(evt) {
+//             var files = evt.target.files; // FileList object
+//             // Obtenemos la imagen del campo "file".
+//             for (var i = 0, f; f = files[i]; i++) {
+//                 //Solo admitimos imágenes.
+//                 if (!f.type.match('image.*')) {
+//                     continue;
+//                 }
+//                 var reader = new FileReader();
+//                 reader.onload = (function (theFile) {
+//                     return function (e) {
+//                         // Insertamos la imagen
+//                         document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="200px" title="', escape(theFile.name), '"/>'].join('');
+//                     };
+//                 })(f);
+//                 reader.readAsDataURL(f);
+//             }
+//         }
+//         document.getElementById('file').addEventListener('change', archivo, false);
 
-        function ver(){
+//         function ver(){
 	    
 
-      	alert(file);
-}
+//       	alert(file);
+// }
     </script>
 
       

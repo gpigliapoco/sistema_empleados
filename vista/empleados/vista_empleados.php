@@ -59,7 +59,7 @@
 
 <script>
 $(document).ready(function() {
-    listar_paciente();
+   // listar_paciente();
 
 
 });

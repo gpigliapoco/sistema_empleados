@@ -47,3 +47,9 @@
     
 
  ?>
+
+<div class="form-group">
+                     <label for="">Foto</label>
+                     <input type="file" name="nombre" id="file" class="form-control">
+                     <output id="list" style="margin-top:0px"></output>
+                    </div>

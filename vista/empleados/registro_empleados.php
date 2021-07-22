@@ -26,16 +26,21 @@
                      <label for="">Documento</label>
                      <input type="text" name="nombre" id="txt_dni" placeholder="Documento" class="form-control">
                     </div>
-                    <div class="col-lg-12">
-                    <div class="card" >
-                      <img src="../imagenes/avatar.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                      </div>
-                    </div>
-                    </div>
+                    <div class="form-group">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                        <div class="card" >
+                          <img src="./imagenes/avatar.png" class="card-img-top" width="400" alt="">
+                          <div class="card-body" >
+                            <h5 class="card-title">Foto perfil</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                          </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6"></div>
+                     </div>   
+                    
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">

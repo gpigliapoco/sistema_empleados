@@ -27,18 +27,17 @@
                      <input type="text" name="nombre" id="txt_dni" placeholder="Documento" class="form-control">
                     </div>
                     <div class="form-group">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-6">
-                        <div class="card" >
-                          <img src="./imagenes/avatar.png" class="card-img-top" width="400" alt="">
-                          <div class="card-body" >
-                            <h5 class="card-title">Foto perfil</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
+                    <div class="col-md-3"></div>
+                    
+                        <div class="card "  >
+                          <img src="./imagenes/avatar.png" class="img-fluid" width="300" id="mostrarimagen">                         
                         </div>
-                     </div>
-                     <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                          <label for="">Foto perfil</label><br>
+                          <input type="file" class="form-control" id="seleccionararchivo">
+                        </div>
+                     
+                     
                      </div>   
                     
                   </div>
@@ -83,6 +82,7 @@
                     </div>
 
                   </div>
+                  <div class="col-lg-12"></div>
                   <div class="col-lg-12" style="text-align:center">
                     <b>Datos Del Beneficiario</b>                    
                   </div> 
@@ -208,6 +208,23 @@
 
 //       	alert(file);
 // }
+
+document.getElementById("seleccionararchivo").addEventListener("change", () => {
+            var archivoseleccionado = document.querySelector("#seleccionararchivo");
+            var archivos = archivoseleccionado.files;
+            var imagenPrevisualizacion = document.querySelector("#mostrarimagen");
+            // Si no hay archivos salimos de la función y quitamos la imagen
+            if (!archivos || !archivos.length) {
+            imagenPrevisualizacion.src = "";
+            return;
+            }
+            // Ahora tomamos el primer archivo, el cual vamos a previsualizar
+            var primerArchivo = archivos[0];
+            // Lo convertimos a un objeto de tipo objectURL
+            var objectURL = URL.createObjectURL(primerArchivo);
+            // Y a la fuente de la imagen le ponemos el objectURL
+            imagenPrevisualizacion.src = objectURL;
+        });
     </script>
 
       

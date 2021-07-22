@@ -66,7 +66,7 @@ function abrirModalRegistro(){
 	$("#modal_registro_paciente").modal("show");
 }
 
-function registrarHistorial(){
+/* function registrarEmpleado(){
 	var nombre=$("#txt_nombre").val();
 	var apellido=$("#txt_apellido").val();
 	var direccion=$("#txt_direccion").val();
@@ -91,13 +91,23 @@ function registrarHistorial(){
 	var vencimiento=$("#txt_vencimiento").val();
 	var observacion=$("#txt_observacion").val();
 
+	var archivo=$("#seleccionararchivo").val();
 
+	var formData= new FormData();
+    var foto = $("#seleccionararchivo")[0].files[0];
+	formData.append('f',foto);
+		//formData.append('n',nombre);
+	///formData.append('a',apellido);
 
 
 	$.ajax({
-		url: "../controlador/historial/control_registrar_fua.php",
+		url: "../controlador/control_registrar_empleado.php",
 		type: "POST",
-		data: {
+		data:formData,
+		contentType:false,
+		processData:false,
+	 	data:{
+			
 			nombre:nombre,
 			apellido:apellido,
 			direccion:direccion,
@@ -124,23 +134,52 @@ function registrarHistorial(){
 
 			
 			
-		}
+		} 
 	}).done(function(resp){
 		
 		if(resp>0){
 			
-			Swal.fire("Mensaje De Confirmacion","Datos correctamente, Nuevo Usuario Registrado","success")            
-				.then ( ( value ) =>  {
-					$("#contenido_principal").load("historial/vista_historialManten.php");
+			Swal.fire("Mensaje De Confirmacion","Datos correctamente, Nuevo Usuario Registrado","success") ;           
+				
 			
-			});
-		}
-		else{
-			Swal.fire("Mensaje De Confirmacion","no se puede registrar fua","warning");
-		}
+			}
+		
+		
 	})
-}
+} */
 
+function Registrar(){
+	var nombre=$("#txt_nombre").val();
+	var apellido=$("#txt_apellido").val();
+	
+	var archivo = $("#seleccionararchivo").val();
+	
+
+	if(archivo.length==0){
+		alert("hay foto")
+	}
+
+	var formData= new FormData();
+	var foto = $("#seleccionararchivo")[0].files[0];
+	formData.append('f',foto);
+	formData.append('nombre',nombre);
+	formData.append('apellido',apellido);
+
+	$.ajax({
+		url:'../controlador/control_registrar_empleado.php',
+		type:'post',
+		data:formData,
+		
+		contentType:false,
+		processData:false,
+		success: function(respuesta){
+			if(respuesta !=0){
+				alert("funciona")
+			}
+		}
+	});
+	return false;
+}
 
 //function ver(){
 //	var foto=$("#file").val();

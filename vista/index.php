@@ -512,7 +512,7 @@
 <script src="../plantilla/dist/js/demo.js"></script>
 <script src="../plantilla/plugins/datatable/datatables.min.js"></script>
 <script src="../plantilla/plugins/datatable/DataTables-1.10.25/js/jquery.dataTables.min.js"></script>
-<script src="../plantilla/plugins/sweetalert2/sweetalert2.js"></script>
+
 
 <script>
   

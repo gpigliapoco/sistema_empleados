@@ -1,3 +1,4 @@
+<script type="text/javascript" src="../js/empleados.js?rev=<?php echo time();?>"></script>
 <div class="col-md-12">
           <div class="box box-warning box-solid">
             <div class="box-header with-border">
@@ -10,7 +11,7 @@
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
-            <form onsubmit="return false">
+            <form onsubmit="return false" method="POST" action="#" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="row">
                   <div class="col-md-6">
@@ -171,7 +172,7 @@
           <!-- nav-tabs-custom -->
         </div>
         <div class="col-lg-12" style="text-align:center">
-       <button class="btn btn-success btn-lg" onclick="ver()">Registrar</button>
+       <button class="btn btn-success btn-lg" onclick="Registrar()">Registrar</button>
         </div>
             </div>
             <!-- /.box-body -->

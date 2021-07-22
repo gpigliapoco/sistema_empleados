@@ -151,6 +151,27 @@ function abrirModalRegistro(){
 function Registrar(){
 	var nombre=$("#txt_nombre").val();
 	var apellido=$("#txt_apellido").val();
+	var direccion=$("#txt_direccion").val();
+	var ciudad=$("#txt_ciudad").val();
+	var dni=$("#txt_dni").val();
+	var movil=$("#txt_movil").val();
+	var sexo=$("#cbm_sexo").val();
+	var nacimiento=$("#txt_fechaN").val();
+	var estado=$("#cbm_estadoCivil").val();
+	var ingreso=$("#txt_ingreso").val();
+	var cargo=$("#txt_cargo").val();
+	var nombreBenef=$("#txt_nombreBenef").val();
+	var dniBenef=$("#txt_dniBenef").val();
+	var direccionBenef=$("#txt_direccionBenef").val();
+	var movilBenef=$("#txt_movilBenef").val();
+	var nombreEsposa=$("#txt_nombreEsposa").val();
+	var dniEsposa=$("#txt_dniEsposa").val();
+	var movilEsposa=$("#txt_movilEsposa").val();
+	var hijos=$("#txt_hijos").val();
+	var registroCombo=$("#cbm_registro").val();
+	var registro=$("#txt_registro").val();
+	var vencimiento=$("#txt_vencimiento").val();
+	var observacion=$("#txt_observacion").val();
 	
 	var archivo = $("#seleccionararchivo").val();
 	
@@ -164,12 +185,31 @@ function Registrar(){
 	formData.append('f',foto);
 	formData.append('nombre',nombre);
 	formData.append('apellido',apellido);
+	formData.append('direccion',direccion);
+	formData.append('ciudad',ciudad);
+	formData.append('dni',dni);
+	formData.append('movil',movil);
+	formData.append('sexo',sexo);
+	formData.append('nacimiento',nacimiento);
+	formData.append('estado',estado);
+	formData.append('ingreso',ingreso);
+	formData.append('cargo',cargo);
+	formData.append('nombrebenef',nombreBenef);
+	formData.append('direccionBenef',direccionBenef);
+	formData.append('dniBenef',dniBenef);
+	formData.append('nombreEsposa',nombreEsposa);
+	formData.append('dniEsposa',dniEsposa);
+	formData.append('movilEsposa',movilEsposa);
+	formData.append('hijos',hijos);
+	formData.append('registroCombo',registroCombo);
+	formData.append('registro',registro);
+	formData.append('vencimiento',vencimiento);
+	formData.append('observacion',observacion);
 
 	$.ajax({
 		url:'../controlador/control_registrar_empleado.php',
 		type:'post',
-		data:formData,
-		
+		data:formData,		
 		contentType:false,
 		processData:false,
 		success: function(respuesta){

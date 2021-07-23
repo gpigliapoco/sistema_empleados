@@ -32,21 +32,19 @@
                         <th>Foto</th>
                         <th>Nombre</th>
                         <th>Documento</th>
-                        <th>Movil</th>
-                        <th>Direccion</th>
-                        <th>Status</th>
+                        <th>Movil</th>    
+                        <th>foto</th>                                             
                         <th>Acci&oacute;n</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                    <th>#</th>
+                        <th>#</th>
                         <th>Foto</th>
                         <th>Nombre</th>
                         <th>Documento</th>
-                        <th>Movil</th>
-                        <th>Direccion</th>
-                        <th>Status</th>
+                        <th>Movil</th>    
+                        <th>foto</th>                                             
                         <th>Acci&oacute;n</th>
                     </tr>
                 </tfoot>
@@ -59,7 +57,7 @@
 
 <script>
 $(document).ready(function() {
-   // listar_paciente();
+    listar_empleados();
 
 
 });

@@ -12,31 +12,20 @@ function listar_empleados(){
 	  "async": false ,
 	  "processing": true,
 	  "ajax":{
-		   url:"../controlador/paciente/control_listar_paciente.php",
+		   url:"../controlador/control_listar_empleados.php",
 		  type:'POST'
 	  },
 	  "columns":[
-		  {"data":"idpaciente"},
-		  {"data":"paciente"},
-		  {"data":"pa_sexo",
-		  	render: function (data, type, row ) {
-				if(data=='m'){
-					return "MASCULINO";                   
-				}else{
-					return "FEMENINO";                 
-				}
-			}},
-		  {"data":"pa_movil"},		 	
-		  {"data":"pa_dni"},		 
-          {"data":"pa_direccion"},	
-          {"data":"pa_status",
-			render:function(data,type,row){
-				if(data=='activo'){
-					return "<span class='label label-success'>"+data+"</span>";
-				}else{
-					return "<span class='label label-danger'>"+data+"</span>";
-				}
-			}},	
+		  {"data":"id"},
+		  {"data":"nombre"},		 
+		  {"data":"apellido"},		 	
+		  {"data":"dni"},		 
+          {"data":"direccion"},	
+		  {"data":"foto",
+		  render:function(data,type,row){
+			 return "<img src='../"+data+"' width='80px'> ";
+		  }},
+        
             {"defaultContent":"<button style='font-size:13px;' type='button' class='desactivar btn btn-danger'><i class='fa fa-trash'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success'><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>"}
 		  
 		  
@@ -49,7 +38,7 @@ function listar_empleados(){
   
   
 
-  document.getElementById("tabla_paciente_filter").style.display="none";
+  document.getElementById("tabla_empleados_filter").style.display="none";
   $('input.global_filter').on( 'keyup click', function () {
 	   filterGlobal();
    } );
@@ -117,6 +106,7 @@ function Registrar(){
 	formData.append('nombrebenef',nombreBenef);
 	formData.append('direccionBenef',direccionBenef);
 	formData.append('dniBenef',dniBenef);
+	formData.append('movilBenef',movilBenef);
 	formData.append('nombreEsposa',nombreEsposa);
 	formData.append('dniEsposa',dniEsposa);
 	formData.append('movilEsposa',movilEsposa);

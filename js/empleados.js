@@ -66,87 +66,7 @@ function abrirModalRegistro(){
 	$("#modal_registro_paciente").modal("show");
 }
 
-/* function registrarEmpleado(){
-	var nombre=$("#txt_nombre").val();
-	var apellido=$("#txt_apellido").val();
-	var direccion=$("#txt_direccion").val();
-	var ciudad=$("#txt_ciudad").val();
-	var dni=$("#txt_dni").val();
-	var movil=$("#txt_movil").val();
-	var sexo=$("#cbm_sexo").val();
-	var nacimiento=$("#txt_fechaN").val();
-	var estado=$("#cbm_estadoCivil").val();
-	var ingreso=$("#txt_ingreso").val();
-	var cargo=$("#txt_cargo").val();
-	var nombreBenef=$("#txt_nombreBenef").val();
-	var dniBenef=$("#txt_dniBenef").val();
-	var direccionBenef=$("#txt_direccionBenef").val();
-	var movilBenef=$("#txt_movilBenef").val();
-	var nombreEsposa=$("#txt_nombreEsposa").val();
-	var dniEsposa=$("#txt_dniEsposa").val();
-	var movilEsposa=$("#txt_movilEsposa").val();
-	var hijos=$("#txt_hijos").val();
-	var registroCombo=$("#cbm_registro").val();
-	var registro=$("#txt_registro").val();
-	var vencimiento=$("#txt_vencimiento").val();
-	var observacion=$("#txt_observacion").val();
 
-	var archivo=$("#seleccionararchivo").val();
-
-	var formData= new FormData();
-    var foto = $("#seleccionararchivo")[0].files[0];
-	formData.append('f',foto);
-		//formData.append('n',nombre);
-	///formData.append('a',apellido);
-
-
-	$.ajax({
-		url: "../controlador/control_registrar_empleado.php",
-		type: "POST",
-		data:formData,
-		contentType:false,
-		processData:false,
-	 	data:{
-			
-			nombre:nombre,
-			apellido:apellido,
-			direccion:direccion,
-			ciudad:ciudad,
-			dni:dni,
-			movil:movil,
-			sexo:sexo,
-			nacimiento:nacimiento,
-			estado:estado,
-			ingreso:ingreso,
-			cargo:cargo,
-			nombreBenef:nombreBenef,
-			dniBenef:dniBenef,
-			direccionBenef:direccionBenef,
-			movilBenef:movilBenef,
-			nombreEsposa:nombreEsposa,
-			dniEsposa:dniEsposa,
-			movilEsposa:movilEsposa,
-			hijos:hijos,
-			registroCombo:registroCombo,
-			registro:registro,
-			vencimiento:vencimiento,
-			observacion:observacion
-
-			
-			
-		} 
-	}).done(function(resp){
-		
-		if(resp>0){
-			
-			Swal.fire("Mensaje De Confirmacion","Datos correctamente, Nuevo Usuario Registrado","success") ;           
-				
-			
-			}
-		
-		
-	})
-} */
 
 function Registrar(){
 	var nombre=$("#txt_nombre").val();
@@ -221,8 +141,3 @@ function Registrar(){
 	return false;
 }
 
-//function ver(){
-//	var foto=$("#file").val();
-
-//	alert(foto)
-//}

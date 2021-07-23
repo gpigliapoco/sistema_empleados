@@ -1,8 +1,8 @@
 <?php 
 
-	//require_once '../../modelo/m_historial.php';
+	require_once '../modelo/modelo_empleados.php';
 
-	//$mu= new modelo_historial();
+	    $mu= new modelo_empleados();
         $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
         $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : '';
         $direccion = (isset($_POST['direccion'])) ? $_POST['direccion'] : '';
@@ -39,31 +39,9 @@
         echo 0;
     }
 
-
-
-
-   /*  date_default_timezone_set("America/Caracas");
-    $fechaHora = date('Y-m-d h:i:s');
-    $estado = '1';
-
-    $nombre_de_foto_perfil = "Sisfarmacia-".date('Y-m-d-h-i-s');
-    $filename = $nombre_de_foto_perfil."_".$_FILES['file']['name'];
-
-    $location = "update_usuarios/".$filename;
-
-    move_uploaded_file($_FILES['file']['tmp_name'],$location);
-
-   
-    
-    $consulta=$mu->registrar_fua($idHistoria,$idConsulta);
-	echo $consulta;
-     */
+  
     
 
  ?>
 
-               <!--      <div class="form-group">
-                     <label for="">Foto</label>
-                     <input type="file" name="nombre" id="file" class="form-control">
-                     <output id="list" style="margin-top:0px"></output>
-                    </div> -->
+              

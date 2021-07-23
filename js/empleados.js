@@ -82,16 +82,20 @@ function Registrar(){
 	var vencimiento=$("#txt_vencimiento").val();
 	var observacion=$("#txt_observacion").val();
 	
-	var archivo = $("#seleccionararchivo").val();
+	var foto = $("#seleccionararchivo").val();
 	
+	var f=new Date();
+	var extension=foto.split('.').pop();
+	var nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+""+extension;
 
 	if(archivo.length==0){
 		alert("hay foto")
 	}
 
 	var formData= new FormData();
-	var foto = $("#seleccionararchivo")[0].files[0];
-	formData.append('f',foto);
+	var fo = $("#seleccionararchivo")[0].files[0];
+	formData.append('fo',fo);
+	formData.append('foto',nombreFoto);
 	formData.append('nombre',nombre);
 	formData.append('apellido',apellido);
 	formData.append('direccion',direccion);

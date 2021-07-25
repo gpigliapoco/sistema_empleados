@@ -29,14 +29,14 @@
         $nombreFoto = (isset($_POST['nombreFoto'])) ? $_POST['nombreFoto'] : '';
 
     
-         $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
+         /* $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
                                                 $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
                                                 $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
-                                            $vencimiento,$observacion,$ruta); 
+                                            $vencimiento,$observacion,$ruta);  */
         
-        echo $consulta;
+       // echo $consulta;
 
-       /*  if(move_uploaded_file($_FILES["fo"]["tmp_name"],"../vista/imagenes/".$nombreFoto)){
+        if(move_uploaded_file($_FILES["fo"]["tmp_name"],"../vista/imagenes/".$nombreFoto)){
              $ruta='../vista/imagenes/'+$nombreFoto;
             $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
                                                 $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
@@ -45,7 +45,7 @@
                                             echo 1;
         }else{
             echo 0;
-        } */
+        }
     
   
     

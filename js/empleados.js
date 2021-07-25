@@ -119,13 +119,14 @@ function Registrar(){
 	formData.append('observacion',observacion);
 
 	$.ajax({
-		url:'../controlador',
+		url:'../controlador/control_registrar_empleado.php',
 		type:'post',
 		data:formData,		
 		contentType:false,
 		processData:false,
 		success: function(respuesta){
-			if(respuesta ==0){
+			alert(respuesta);
+			if(respuesta ==1){
 				alert("funciona")
 			}
 		}

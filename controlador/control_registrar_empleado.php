@@ -28,21 +28,21 @@
         $observacion = (isset($_POST['observacion'])) ? $_POST['observacion'] : '';
         $nombreFoto = (isset($_POST['nombreFoto'])) ? $_POST['nombreFoto'] : '';
 
-    if(is_array($_FILES) && count($_FILES)>0){
+    
 
         if(move_uploaded_file($_FILES["fo"]["tmp_name"],"../vista/imagenes/".$nombreFoto)){
-            $ruta='../vista/imagenes/';
+            $ruta='../vista/imagenes/'+$nombreFoto;
             $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
                                                 $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
                                                 $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
                                             $vencimiento,$observacion,$ruta);
+                                            echo 1;
         }else{
             echo 0;
         }
     
-    }else{
-        echo 0;
-    }
+  
+    
 
   
     

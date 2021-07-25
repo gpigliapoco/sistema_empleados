@@ -16,12 +16,12 @@ function listar_empleados(){
 		  type:'POST'
 	  },
 	  "columns":[
-		  {"data":"id"},
-		  {"data":"nombre"},		 
-		  {"data":"apellido"},		 	
-		  {"data":"dni"},		 
-          {"data":"direccion"},	
-		  {"data":"foto",
+		  {"data":"idempleados"},
+		  {"data":"emp_nombre"},		 
+		  {"data":"emp_apellido"},		 	
+		  {"data":"emp_dni"},		 
+          {"data":"emp_direccion"},	
+		  {"data":"emp_foto",
 		  render:function(data,type,row){
 			 return "<img src='../"+data+"' width='80px'> ";
 		  }},
@@ -88,9 +88,7 @@ function Registrar(){
 	var extension=foto.split('.').pop();
 	var nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+""+extension;
 
-	if(archivo.length==0){
-		alert("hay foto")
-	}
+	
 
 	var formData= new FormData();
 	var fo = $("#seleccionararchivo")[0].files[0];
@@ -121,13 +119,13 @@ function Registrar(){
 	formData.append('observacion',observacion);
 
 	$.ajax({
-		url:'../controlador/control_registrar_empleado.php',
+		url:'../controlador',
 		type:'post',
 		data:formData,		
 		contentType:false,
 		processData:false,
 		success: function(respuesta){
-			if(respuesta !=0){
+			if(respuesta ==0){
 				alert("funciona")
 			}
 		}

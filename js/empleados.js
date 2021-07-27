@@ -17,14 +17,15 @@ function listar_empleados(){
 	  },
 	  "columns":[
 		  {"data":"idempleados"},
-		  {"data":"emp_nombre"},		 
-		  {"data":"emp_apellido"},		 	
-		  {"data":"emp_dni"},		 
-          {"data":"emp_direccion"},	
 		  {"data":"emp_foto",
 		  render:function(data,type,row){
 			 return "<img src='../"+data+"' width='80px'> ";
 		  }},
+		  {"data":"emp_nombre"},		 
+		  {"data":"emp_apellido"},		 	
+		  {"data":"emp_dni"},		 
+          {"data":"emp_direccion"},	
+		  
         
             {"defaultContent":"<button style='font-size:13px;' type='button' class='desactivar btn btn-danger'><i class='fa fa-trash'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success'><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>"}
 		  

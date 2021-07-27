@@ -127,7 +127,7 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a onclick="cargar_contenido('contenido_principal','empleados/vista_empleados.php')">
-            <i class="fa fa-users"></i> <span>usuario</span>
+            <i class="fa fa-users"></i> <span>Empleados</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

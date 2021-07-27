@@ -21,7 +21,7 @@
             </div>
             <div class="col-lg-2">
                 <button class="btn btn-danger" style="width:100%" onclick="cargar_contenido('contenido_principal','empleados/registro_empleados.php')"><i
-                        class="glyphicon glyphicon-plus"></i>Nuevo Registro</button>
+                        class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo Registro</button>
             </div>
         </div>
         <div class="box-body">

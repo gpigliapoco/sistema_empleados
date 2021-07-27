@@ -28,7 +28,7 @@
         function Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,$ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
         $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,$vencimiento,$observacion,$ruta){
             $consulta = "CALL addEmpleado('$nombre','$apellido','$direccion','$ciudad','$dni','$movil','$sexo','$nacimiento','$estado','$ingreso','$cargo','$nombreBenef','$direccionBenef',
-                                            '$dniBenef','$movilBenef','$nombreEsposa','$dniEsposa','$movilEsposa','$hijos','$registroCombo','$registro','$vencimiento','$ruta' ) ";	
+                                            '$dniBenef','$movilBenef','$nombreEsposa','$dniEsposa','$movilEsposa','$hijos','$registroCombo','$registro','$vencimiento','$observacion','$ruta' ) ";	
             
             $resultado=$this->conexion->conexion->prepare($consulta);
             if ($resultado->execute()) {                 

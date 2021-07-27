@@ -83,10 +83,20 @@ function Registrar(){
 	var observacion=$("#txt_observacion").val();
 	
 	var foto = $("#seleccionararchivo").val();
-	
+	var nombreFoto="";
+
 	var f=new Date();
-	var extension=foto.split('.').pop();
-	var nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+""+extension;
+	var extension=foto.split('.').pop(); /// captura la extension
+
+	if(foto.lenght>0){
+		
+		 nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+"."+extension;
+	}
+
+	
+
+	
+	
 
 	
 

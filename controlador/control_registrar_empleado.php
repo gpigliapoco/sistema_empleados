@@ -3,6 +3,8 @@
 	require_once '../modelo/modelo_empleados.php';
 
 	    $mu= new modelo_empleados();
+        $contador=0;
+        $mensajeerror="no anda";
         $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
         $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : '';
         $direccion = (isset($_POST['direccion'])) ? $_POST['direccion'] : '';
@@ -26,27 +28,44 @@
         $registro = (isset($_POST['registro'])) ? $_POST['registro'] : '';
         $vencimiento = (isset($_POST['vencimiento'])) ? $_POST['vencimiento'] : '';
         $observacion = (isset($_POST['observacion'])) ? $_POST['observacion'] : '';
-        $nombreFoto = (isset($_POST['nombreFoto'])) ? $_POST['nombreFoto'] : '';
+        $nombreFoto = (isset($_POST['foto'])) ? $_POST['foto'] : '';
 
     
-         /* $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
-                                                $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
-                                                $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
-                                            $vencimiento,$observacion,$ruta);  */
         
-       // echo $consulta;
 
-        if(move_uploaded_file($_FILES["fo"]["tmp_name"],"../vista/imagenes/".$nombreFoto)){
-             $ruta='../vista/imagenes/'+$nombreFoto;
-            $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
-                                                $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
-                                                $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
-                                            $vencimiento,$observacion,$ruta); 
-                                            echo 1;
-        }else{
-            echo 0;
-        }
+        if($contador>0){
+            echo $mensajeerror;
+        }else {
+            if(empty($nombreFoto)){
+
+                $ruta='vista/imagenes/usuario.png';
     
+                $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
+                                                       $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
+                                                       $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
+                                                   $vencimiento,$observacion,$ruta); 
+                                                   echo 1;
+                
+            }else {
+                
+                if(move_uploaded_file($_FILES["fo"]["tmp_name"],"../vista/imagenes/".$nombreFoto)){
+
+                    $ruta='vista/imagenes/'.$nombreFoto;
+    
+                    $consulta=$mu->Registrar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
+                                                       $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
+                                                       $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
+                                                   $vencimiento,$observacion,$ruta); 
+                                                   echo 1;
+               }
+            }
+            
+           
+       
+
+        }
+
+       
   
     
 

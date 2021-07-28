@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="../plantilla/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="../plantilla/plugins/datatable/datatables.min.css">
   <link rel="stylesheet" href="../plantilla/plugins/datatable/DataTables-1.10.25/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="../plantilla/plugins/select2/select2.min.css">
   <
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -512,6 +513,8 @@
 <script src="../plantilla/dist/js/demo.js"></script>
 <script src="../plantilla/plugins/datatable/datatables.min.js"></script>
 <script src="../plantilla/plugins/datatable/DataTables-1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="../plantilla/plugins/select2/select2.min.js"></script>
+<script src="../plantilla/plugins/sweetalert2/sweetalert2.js"></script>
 
 
 <script>

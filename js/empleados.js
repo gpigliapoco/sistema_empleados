@@ -95,7 +95,9 @@ function Registrar(){
 	}
 
 	
-
+	if(nombre.lenght==0 || apellido.lenght == 0 || dni.lenght ==0 || direccion.lenght==0){
+		return Swal.fire("llenar campos vacios","warning");
+	}
 	
 	
 
@@ -138,10 +140,40 @@ function Registrar(){
 		success: function(respuesta){
 			alert(respuesta);
 			if(respuesta ==1){
-				alert("funciona")
+				Swal.fire('Empleado registrado','success');
+				cargar_contenido('contenido_principal','empleados/registro_empleados.php');
 			}
 		}
 	});
 	return false;
 }
 
+function limpiarRegistros(){
+
+	$("#txt_nombre").val("");
+	$("#txt_apellido").val("");
+	$("#txt_direccion").val("");
+	$("#txt_ciudad").val("");
+	$("#txt_dni").val("");
+	$("#txt_movil").val("");
+	$("#cbm_sexo").val("");
+	$("#txt_fechaN").val("");
+	$("#cbm_estadoCivil").val("");
+	$("#txt_ingreso").val("");
+	$("#txt_cargo").val("");
+	$("#txt_nombreBenef").val("");
+	$("#txt_dniBenef").val("");
+	$("#txt_direccionBenef").val("");
+	$("#txt_movilBenef").val("");
+	$("#txt_nombreEsposa").val("");
+	$("#txt_dniEsposa").val("");
+	$("#txt_movilEsposa").val("");
+	$("#txt_hijos").val("");
+	$("#cbm_registro").val("");
+	$("#txt_registro").val("");
+	$("#txt_vencimiento").val("");
+	$("#txt_observacion").val("");
+	
+	$("#seleccionararchivo").val("");
+
+}

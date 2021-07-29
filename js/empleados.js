@@ -99,19 +99,21 @@ function Registrar(){
 	var nacimiento=$("#txt_fechaN").val();
 	var estado=$("#cbm_estadoCivil").val();
 	var ingreso=$("#txt_ingreso").val();
-	var cargo=$("#cbm_cargo").val();
-	var nombreBenef=$("#txt_nombreBenef").val();
-	var dniBenef=$("#txt_dniBenef").val();
-	var direccionBenef=$("#txt_direccionBenef").val();
-	var movilBenef=$("#txt_movilBenef").val();
+	var cargo=$("#cbm_cargo").val();	
 	var nombreEsposa=$("#txt_nombreEsposa").val();
 	var dniEsposa=$("#txt_dniEsposa").val();
 	var movilEsposa=$("#txt_movilEsposa").val();
 	var hijos=$("#txt_hijos").val();
+	var nombreBenef=$("#txt_nombreBenef").val();
+	var dniBenef=$("#txt_dniBenef").val();
+	var direccionBenef=$("#txt_direccionBenef").val();
+	var movilBenef=$("#txt_movilBenef").val();
 	var registroCombo=$("#cbm_registro").val();
 	var registro=$("#txt_registro").val();
 	var vencimiento=$("#txt_vencimiento").val();
 	var observacion=$("#txt_observacion").val();
+
+	
 	
 	var foto = $("#seleccionararchivo").val();
 	var nombreFoto="";
@@ -169,6 +171,7 @@ function Registrar(){
 		processData:false,
 		success: function(respuesta){
 			alert(respuesta);
+		
 			if(respuesta ==1){
 				Swal.fire('Empleado registrado','success');
 				cargar_contenido('contenido_principal','empleados/registro_empleados.php');
@@ -177,6 +180,9 @@ function Registrar(){
 	});
 	return false;
 }
+
+
+
 
 function limpiarRegistros(){
 
@@ -207,3 +213,4 @@ function limpiarRegistros(){
 	$("#seleccionararchivo").val("");
 
 }
+

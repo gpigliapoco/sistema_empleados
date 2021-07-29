@@ -13,7 +13,7 @@
 
 
           function listar_empleados(){
-            $consulta = "SELECT * FROM empleados";
+            $consulta = "CALL listarEmpleado";
             $arreglo = array();
             if ($resultado = $this->conexion->conexion->query($consulta)) {
                 while ($consulta_VU = mysqli_fetch_assoc($resultado)) {
@@ -40,7 +40,18 @@
                  $this->conexion->cerrar();
         }
 
+        function listar_combo(){
+            $consulta = "CALL listarSector";
+            $arreglo = array();
+		    if ($resultado = $this->conexion->conexion->query($consulta)) {
+			    while ($consulta_VU = mysqli_fetch_array($resultado)) {
+				    $arreglo[]=$consulta_VU;
 
+		    	}
+		    	return $arreglo;
+			    $this->conexion->cerrar();
+	    	}
+        }
 
 
     }

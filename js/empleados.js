@@ -16,16 +16,16 @@ function listar_empleados(){
 		  type:'POST'
 	  },
 	  "columns":[
-		  {"data":"idempleados"},
+		  {"data":"idempleado"},
 		  {"data":"emp_foto",
 		  render:function(data,type,row){
 			 return "<img src='../"+data+"' width='80px'> ";
 		  }},
-		  {"data":"emp_nombre"},		 
+		  {"data":"nombre"},		 
 		  {"data":"emp_apellido"},		 	
 		  {"data":"emp_dni"},		 
           {"data":"emp_direccion"},	
-		  {"data":"emp_estatus",
+		  {"data":"emp_status",
 			render:function(data,type,row){
 				if(data=='activo'){
 					return "<span class='label label-success'>"+data+"</span>";
@@ -64,6 +64,28 @@ function abrirModalRegistro(){
 	$("#modal_registro_paciente").modal("show");
 }
 
+function comboRol(){
+	$.ajax({
+		url: "../controlador/control_comborol.php",
+		type: "POST",
+	}).done(function(resp){
+	//	alert(resp);  // para ver que datos trae
+		var data=JSON.parse(resp);
+		var cadena="";
+	/* 	 alert(data);
+		alert(data[0].rol);
+		for(var i=0;i < data.length;i++){
+			alert(data[i].rol);			// prueba de recorrido de datos.
+		}  */
+		if(data.length>0){
+			for(var i=0;i < data.length;i++){
+				cadena+="<option value='"+data[i].idsector+"'>"+data[i].sector+"</option>";
+			}
+			$("#cbm_cargo").html(cadena);
+			//$("#cbm_rolEditar").html(cadena);
+		}
+	})
+}
 
 
 function Registrar(){
@@ -77,7 +99,7 @@ function Registrar(){
 	var nacimiento=$("#txt_fechaN").val();
 	var estado=$("#cbm_estadoCivil").val();
 	var ingreso=$("#txt_ingreso").val();
-	var cargo=$("#txt_cargo").val();
+	var cargo=$("#cbm_cargo").val();
 	var nombreBenef=$("#txt_nombreBenef").val();
 	var dniBenef=$("#txt_dniBenef").val();
 	var direccionBenef=$("#txt_direccionBenef").val();

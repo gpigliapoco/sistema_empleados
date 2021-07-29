@@ -11,7 +11,7 @@
         }
 
         function listar_sector(){
-            $consulta = "SELECT * FROM especialidad";
+            $consulta = "CALL listarSector";
             $arreglo = array();
             if ($resultado = $this->conexion->conexion->query($consulta)) {
                 while ($consulta_VU = mysqli_fetch_assoc($resultado)) {
@@ -24,7 +24,7 @@
         }
 
         function registrar_sector($nombre){
-            $consulta="INSERT INTO especialidad(es_especialidad,es_fecha_registro,es_status) VALUES ('$nombre','$fecha','activo')";
+            $consulta="CALL addSector('$nombre')";
             $resultado=$this->conexion->conexion->prepare($consulta);
             if ($resultado->execute()) {                 
               return 1;                 

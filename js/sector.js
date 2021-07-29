@@ -11,12 +11,12 @@ function listar_sector(){
 	  "async": false ,
 	  "processing": true,
 	  "ajax":{
-		   url:"../controlador/especialidad/control_especial_listar.php",
+		   url:"../controlador/sector/control_sector_listar.php",
 		  type:'POST'
 	  },
 	  "columns":[
 		  {"data":"idsector"},
-		  {"data":"sec_nombre"},        		  
+		  {"data":"sector"},        		  
 		  
 	  ],
 
@@ -43,7 +43,7 @@ function AbrirModalRegistro(){
 
  
 
-function registrarEspecial(){
+function registrarSector(){
 	var nombre= $("#txt_nombre").val();
 	
 
@@ -51,7 +51,7 @@ function registrarEspecial(){
 		return Swal.fire("Hay campos vacios","warning");
 	}
 		$.ajax({
-			url: "../controlador/especialidad/control_especial_registrar.php",
+			url: "../controlador/sector/control_sector_registrar.php",
 			type: "POST",
 			data: {
 				nombre:nombre,

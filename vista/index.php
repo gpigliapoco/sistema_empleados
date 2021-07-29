@@ -133,7 +133,15 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-        
+        </li>
+        <li class="active treeview">
+          <a onclick="cargar_contenido('contenido_principal','sector/vista_sector.php')">
+            <i class="fa fa-users"></i> <span>Sector</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
        
     </section>
     <!-- /.sidebar -->

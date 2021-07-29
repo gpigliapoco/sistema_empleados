@@ -79,7 +79,8 @@
                     </div>
                     <div class="form-group">
                      <label for="">Cargo</label>
-                     <input type="text" name="nombre" id="txt_cargo" class="form-control">
+                     <select class="js-example-basic-single" name="state" id="cbm_cargo" style="width:100%;">
+                                 </select>
                     </div>
 
                   </div>
@@ -209,6 +210,8 @@
 
 //       	alert(file);
 // }
+
+comboRol();
 
 document.getElementById("seleccionararchivo").addEventListener("change", () => {
             var archivoseleccionado = document.querySelector("#seleccionararchivo");

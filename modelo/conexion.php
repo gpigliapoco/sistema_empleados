@@ -10,7 +10,7 @@ class Conexion{
         $this->servidor = "localhost";
         $this->usuario = "root";
         $this->contrasena = "";
-        $this->basedatos = "felisan";
+        $this->basedatos = "felisan1";
     }
     function conectar(){
         $this->conexion = new mysqli($this->servidor,$this->usuario,$this->contrasena,$this->basedatos);

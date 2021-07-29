@@ -1,7 +1,7 @@
 <?php
 	require_once '../../modelo/modelo_sector.php';
 
-$mu= new modelo_especialidad();
+$mu= new modelo_sector();
 $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
 
 

@@ -33,7 +33,7 @@
                         <th>Nombre</th>
                         <th>Documento</th>
                         <th>Movil</th>    
-                        <th>foto</th>
+                        <th>Sector</th>
                         <th>Estado</th>                                             
                         <th>Acci&oacute;n</th>
                     </tr>
@@ -45,7 +45,7 @@
                         <th>Nombre</th>
                         <th>Documento</th>
                         <th>Movil</th>    
-                        <th>foto</th>
+                        <th>Sector</th>
                         <th>Estado</th>                                             
                         <th>Acci&oacute;n</th>
                     </tr>

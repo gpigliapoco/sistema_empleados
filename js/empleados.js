@@ -22,9 +22,9 @@ function listar_empleados(){
 			 return "<img src='../"+data+"' width='80px'> ";
 		  }},
 		  {"data":"nombre"},		 
-		  {"data":"emp_apellido"},		 	
-		  {"data":"emp_dni"},		 
-          {"data":"emp_direccion"},	
+		  {"data":"emp_dni"},		 	
+		  {"data":"emp_movil"},		 
+          {"data":"sector"},	
 		  {"data":"emp_status",
 			render:function(data,type,row){
 				if(data=='activo'){
@@ -144,7 +144,7 @@ function Registrar(){
 	}
 	
 	
-	ver();
+	
 	
 
 	var formData= new FormData();

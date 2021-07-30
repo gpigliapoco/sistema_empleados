@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-07-2021 a las 20:02:46
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 30-07-2021 a las 05:08:04
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -25,7 +25,7 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `addEmpleado` (IN `nombre` VARCHAR(250), IN `apellido` VARCHAR(250), IN `cargo` INT, IN `direccion` VARCHAR(250), IN `ciudad` VARCHAR(250), IN `dni` INT, IN `movil` INT, IN `nacimiento` DATE, IN `sexo` CHAR(1), IN `estado` VARCHAR(250), IN `ingreso` DATE, IN `nomE` VARCHAR(250), IN `dniE` INT, IN `movilE` INT, IN `hijos` INT, IN `nomB` VARCHAR(250), IN `dniB` INT, IN `movilB` INT, IN `direccionB` VARCHAR(250), IN `moyano` ENUM('s','n'), IN `registro` VARCHAR(250), IN `vencimiento` DATE, IN `observ` VARCHAR(250))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addEmpleado` (IN `nombre` VARCHAR(250), IN `apellido` VARCHAR(250), IN `cargo` INT, IN `direccion` VARCHAR(250), IN `ciudad` VARCHAR(250), IN `dni` INT, IN `movil` INT, IN `nacimiento` DATE, IN `sexo` CHAR(1), IN `estado` VARCHAR(250), IN `ingreso` DATE, IN `nomE` VARCHAR(250), IN `dniE` INT, IN `movilE` INT, IN `hijos` INT, IN `nomB` VARCHAR(250), IN `dniB` INT, IN `movilB` INT, IN `direccionB` VARCHAR(250), IN `moyano` ENUM('s','n'), IN `registro` VARCHAR(250), IN `vencimiento` DATE, IN `observ` VARCHAR(250), IN `foto` VARCHAR(250))  BEGIN
 INSERT INTO empleado(empleado.emp_nombre,empleado.emp_apellido,empleado.sector_idsector,empleado.emp_direccion,
                     empleado.emp_ciudad,empleado.emp_dni,empleado.emp_movil,empleado.emp_sexo,
                     empleado.emp_nacimiento,empleado.emp_ingreso,empleado.emp_estado,empleado.emp_status,
@@ -45,7 +45,7 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `addSector` (IN `nombre` VARCHAR(45))  INSERT INTO sector(sector) VALUES (nombre)$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `listarEmpleado` ()  SELECT empleado.*,sector.sector,CONCAT(empleado.emp_nombre," ",empleado.emp_apellido)as nombre FROM empleado INNER JOIN sector on empleado.idempleado=sector.idsector$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listarEmpleado` ()  SELECT empleado.*,sector.sector,CONCAT(empleado.emp_nombre," ",empleado.emp_apellido)as nombre FROM empleado INNER JOIN sector on empleado.sector_idsector=sector.idsector$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `listarSector` ()  SELECT * FROM sector$$
 
@@ -83,9 +83,11 @@ CREATE TABLE `empleado` (
 --
 
 INSERT INTO `empleado` (`idempleado`, `emp_nombre`, `emp_apellido`, `emp_direccion`, `emp_ciudad`, `emp_dni`, `emp_movil`, `emp_sexo`, `emp_nacimiento`, `emp_ingreso`, `emp_estado`, `emp_status`, `emp_foto`, `sector_idsector`, `emp_esposa`, `emp_esposaDni`, `emp_esposaMovil`, `emp_hijos`) VALUES
-(1, 'gerardo', 'piglia', 'quesada 3209', 'vicente lopez', 29985934, 1513213, 'm', '2021-07-15', '2021-07-05', 'soltero', 'activo', NULL, 1, NULL, NULL, NULL, NULL),
-(2, 'asda', 'asda', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
-(3, 'leo', 'piglia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL);
+(1, 'gerardo', 'piglia', 'quesada 3209', 'vicente lopez', 29985934, 1513213, 'm', '2021-07-15', '2021-07-05', 'soltero', 'activo', 'vista/imagenes/usuario.png', 1, NULL, NULL, NULL, NULL),
+(2, 'asda', 'asda', 'jfjhvgjhb', 'asdasda', 321321, 13213, 'm', '2021-07-15', '2021-07-09', 'solt', 'activo', 'vista/imagenes/usuario.png', 1, NULL, NULL, NULL, NULL),
+(3, 'leo', 'piglia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'activo', 'vista/imagenes/usuario.png', 1, NULL, NULL, NULL, NULL),
+(4, 'pao', 'asdasd', 'asdasa', 'asdasd', 0, 416513, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/IMG297202119965.png', 1, '', 0, 0, 0),
+(5, 'pao', 'sadas', 'assdasd', 'asda', 0, 0, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/usuario.png', 1, '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,9 @@ CREATE TABLE `empleadoextras` (
 --
 
 INSERT INTO `empleadoextras` (`idempleadoExtras`, `ex_nombre`, `ex_dni`, `ex_movil`, `ex_direccion`, `ex_registroM`, `ex_registro`, `ex_vrencimiento`, `empleado_idempleado`, `ex_observacion`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, '');
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, ''),
+(2, '', 0, 0, '', 's', '', '0000-00-00', 4, ''),
+(3, '', 0, 0, '', 's', '', '0000-00-00', 5, '');
 
 -- --------------------------------------------------------
 
@@ -163,13 +167,13 @@ ALTER TABLE `sector`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `empleadoextras`
 --
 ALTER TABLE `empleadoextras`
-  MODIFY `idempleadoExtras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idempleadoExtras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `sector`

@@ -3,8 +3,7 @@
 	require_once '../modelo/modelo_empleados.php';
 
 	    $mu= new modelo_empleados();
-        $contador=0;
-        $mensajeerror="no anda";
+        
         $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
         $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : '';
         $direccion = (isset($_POST['direccion'])) ? $_POST['direccion'] : '';
@@ -28,14 +27,12 @@
         $registro = (isset($_POST['registro'])) ? $_POST['registro'] : '';
         $vencimiento = (isset($_POST['vencimiento'])) ? $_POST['vencimiento'] : '';
         $observacion = (isset($_POST['observacion'])) ? $_POST['observacion'] : '';
-        $nombreFoto = (isset($_POST['foto'])) ? $_POST['foto'] : '';
+        $nombreFoto = (isset($_POST['nombreFoto'])) ? $_POST['nombreFoto'] : '';
 
     
         
 
-        if($contador>0){
-            echo $mensajeerror;
-        }else {
+        
             if(empty($nombreFoto)){
 
                 $ruta='vista/imagenes/usuario.png';
@@ -44,7 +41,7 @@
                                                        $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
                                                        $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
                                                    $vencimiento,$observacion,$ruta); 
-                                                   echo 1;
+                                                   echo "vacio";
                 
             }else {
                 
@@ -56,14 +53,14 @@
                                                        $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
                                                        $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
                                                    $vencimiento,$observacion,$ruta); 
-                                                   echo 1;
+                                                   echo "movio foto";
                }
             }
             
            
        
 
-        }
+        
 
        
   

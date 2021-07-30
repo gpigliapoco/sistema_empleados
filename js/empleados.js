@@ -116,17 +116,17 @@ function Registrar(){
 	
 	
 	var foto = $("#seleccionararchivo").val();
-	var nombreFoto="";
+	
 
 	var f=new Date();
 	var extension=foto.split('.').pop(); /// captura la extension
-
-	if(foto.lenght>0){
-		
-		 nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+"."+extension;
-	}
-
+	nombreFoto="";
 	
+	if(foto.lenght>0){	
+		 nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+"."+extension;
+	
+
+	     }
 	if(nombre.lenght==0 || apellido.lenght == 0 || dni.lenght ==0 || direccion.lenght==0){
 		return Swal.fire("llenar campos vacios","warning");
 	}
@@ -138,7 +138,7 @@ function Registrar(){
 	var formData= new FormData();
 	var fo = $("#seleccionararchivo")[0].files[0];
 	formData.append('fo',fo);
-	formData.append('foto',nombreFoto);
+	formData.append('nombreFoto',nombreFoto);
 	formData.append('nombre',nombre);
 	formData.append('apellido',apellido);
 	formData.append('direccion',direccion);

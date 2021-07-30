@@ -33,9 +33,17 @@ function listar_empleados(){
 					return "<span class='label label-danger'>"+data+"</span>";
 				}
 			}},	
+			{"data":"emp_status",
+			render:function(data,type,row){
+				if(data=='activo'){
+					return "<button style='font-size:13px;' type='button' class='desactivar btn btn-danger'><i class='fa fa-times'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success' disabled><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='ver btn btn-primary'><i class='fa fa-eye'></i></button>";
+				}else{
+					return "<button style='font-size:13px;' type='button' class='desactivar btn btn-danger' disabled><i class='fa fa-times'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success'><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='ver btn btn-primary'><i class='fa fa-eye'></i></button>";
+				}
+			}},	
 		  
         
-            {"defaultContent":"<button style='font-size:13px;' type='button' class='desactivar btn btn-danger'><i class='fa fa-trash'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success'><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>"}
+           
 		  
 		  
 	  ],
@@ -88,6 +96,7 @@ function comboRol(){
 }
 
 
+
 function Registrar(){
 	var nombre=$("#txt_nombre").val();
 	var apellido=$("#txt_apellido").val();
@@ -120,19 +129,22 @@ function Registrar(){
 
 	var f=new Date();
 	var extension=foto.split('.').pop(); /// captura la extension
-	nombreFoto="";
+
 	
-	if(foto.lenght>0){	
+	 let nombreFoto="";
+	
+	if(foto.length>0){	
 		 nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+"."+extension;
 	
 
-	     }
+	     } 
+
 	if(nombre.lenght==0 || apellido.lenght == 0 || dni.lenght ==0 || direccion.lenght==0){
 		return Swal.fire("llenar campos vacios","warning");
 	}
 	
 	
-
+	ver();
 	
 
 	var formData= new FormData();
@@ -150,7 +162,7 @@ function Registrar(){
 	formData.append('estado',estado);
 	formData.append('ingreso',ingreso);
 	formData.append('cargo',cargo);
-	formData.append('nombrebenef',nombreBenef);
+	formData.append('nombreBenef',nombreBenef);
 	formData.append('direccionBenef',direccionBenef);
 	formData.append('dniBenef',dniBenef);
 	formData.append('movilBenef',movilBenef);
@@ -174,7 +186,7 @@ function Registrar(){
 		
 			if(respuesta ==1){
 				Swal.fire('Empleado registrado','success');
-				cargar_contenido('contenido_principal','empleados/registro_empleados.php');
+				cargar_contenido('contenido_principal','empleados/vista_empleados.php');
 			}
 		}
 	});
@@ -214,3 +226,36 @@ function limpiarRegistros(){
 
 }
 
+
+function modificarStatus(idemple,status){	
+	
+	$.ajax({
+		url:"../controlador/control_modificar_status.php",
+		type: "POST",
+		data:{
+			idemple:idemple,
+			status:status
+			
+		}
+	}).done(function(resp){
+		
+	   table.ajax.reload();
+	})
+
+}
+
+$('#tabla_empleados').on('click','.activar',function(){
+	var data =table.row($(this).parents('tr')).data();
+	
+    modificarStatus(data.idempleado,'ACTIVO');
+       
+
+})
+
+$('#tabla_empleados').on('click','.desactivar',function(){
+	var data =table.row($(this).parents('tr')).data();
+	
+	 modificarStatus(data.idempleado,'INACTIVO');
+       
+
+})

@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-6">
                           <label for="">Foto perfil</label><br>
-                          <input type="file" class="form-control" id="seleccionararchivo">
+                          <input type="file" class="form-control" id="seleccionararchivoEditar">
                         </div>
                      
                      

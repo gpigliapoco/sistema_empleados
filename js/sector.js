@@ -47,7 +47,7 @@ function registrarSector(){
 	var nombre= $("#txt_nombre").val();
 	
 
-	if(nombre.lenght==0 || fecha.lenght==0){
+	if(nombre.lenght==0){
 		return Swal.fire("Hay campos vacios","warning");
 	}
 		$.ajax({
@@ -58,7 +58,12 @@ function registrarSector(){
 				
 			}
 		}).done(function(resp){
-			alert(resp);
+			
+			if(respuesta ==1){
+				Swal.fire('Sector registrado','success');
+				$("#modal_registro_sector").modal("hide");
+				
+			}
 		})
 
 }

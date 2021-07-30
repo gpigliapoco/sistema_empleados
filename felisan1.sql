@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-07-2021 a las 05:08:04
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.8
+-- Tiempo de generación: 30-07-2021 a las 17:23:16
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,6 +49,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `listarEmpleado` ()  SELECT empleado
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `listarSector` ()  SELECT * FROM sector$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateStatus` (IN `id` INT, IN `estado` VARCHAR(45))  UPDATE empleado SET empleado.emp_status = estado WHERE empleado.idempleado=id$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -87,7 +89,9 @@ INSERT INTO `empleado` (`idempleado`, `emp_nombre`, `emp_apellido`, `emp_direcci
 (2, 'asda', 'asda', 'jfjhvgjhb', 'asdasda', 321321, 13213, 'm', '2021-07-15', '2021-07-09', 'solt', 'activo', 'vista/imagenes/usuario.png', 1, NULL, NULL, NULL, NULL),
 (3, 'leo', 'piglia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'activo', 'vista/imagenes/usuario.png', 1, NULL, NULL, NULL, NULL),
 (4, 'pao', 'asdasd', 'asdasa', 'asdasd', 0, 416513, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/IMG297202119965.png', 1, '', 0, 0, 0),
-(5, 'pao', 'sadas', 'assdasd', 'asda', 0, 0, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/usuario.png', 1, '', 0, 0, 0);
+(5, 'pao', 'sadas', 'assdasd', 'asda', 0, 0, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/usuario.png', 1, '', 0, 0, 0),
+(6, 'pedro', 'lopez', 'moldes 5251', 'vicente lopez', 29985934, 2147483647, 'm', '2021-07-13', '2021-07-15', 's', 'activo', 'vista/imagenes/usuario.png', 2, 'PAOLA ', 313147321, 315646513, 3),
+(7, 'asdas', 'adsa', 'asd', 'asd', 646, 0, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/usuario.png', 1, '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -115,7 +119,9 @@ CREATE TABLE `empleadoextras` (
 INSERT INTO `empleadoextras` (`idempleadoExtras`, `ex_nombre`, `ex_dni`, `ex_movil`, `ex_direccion`, `ex_registroM`, `ex_registro`, `ex_vrencimiento`, `empleado_idempleado`, `ex_observacion`) VALUES
 (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, ''),
 (2, '', 0, 0, '', 's', '', '0000-00-00', 4, ''),
-(3, '', 0, 0, '', 's', '', '0000-00-00', 5, '');
+(3, '', 0, 0, '', 's', '', '0000-00-00', 5, ''),
+(4, '', 47517322, 215413, 'quesada 3215', 's', '56877135713', '2021-07-05', 6, 'nada'),
+(5, 'PAOLA ', 0, 0, '', 's', '', '0000-00-00', 7, '');
 
 -- --------------------------------------------------------
 
@@ -133,7 +139,8 @@ CREATE TABLE `sector` (
 --
 
 INSERT INTO `sector` (`idsector`, `sector`) VALUES
-(1, 'chofer');
+(1, 'chofer'),
+(2, 'administracion');
 
 --
 -- Índices para tablas volcadas
@@ -167,19 +174,19 @@ ALTER TABLE `sector`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idempleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `empleadoextras`
 --
 ALTER TABLE `empleadoextras`
-  MODIFY `idempleadoExtras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idempleadoExtras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `sector`
 --
 ALTER TABLE `sector`
-  MODIFY `idsector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idsector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

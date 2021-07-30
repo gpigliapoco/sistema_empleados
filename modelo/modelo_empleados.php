@@ -53,6 +53,16 @@
 	    	}
         }
 
+        function modificarStatus($idemple,$status){
+            $consulta = "CALL updateStatus('$idemple','$status')";	
+            
+            $resultado=$this->conexion->conexion->prepare($consulta);
+            if ($resultado->execute()) {                 
+              return 1;                 
+                 }
+                 $this->conexion->cerrar();
+          }	
+
 
     }
 

@@ -90,7 +90,7 @@ function comboRol(){
 				cadena+="<option value='"+data[i].idsector+"'>"+data[i].sector+"</option>";
 			}
 			$("#cbm_cargo").html(cadena);
-			//$("#cbm_rolEditar").html(cadena);
+			$("#cbm_cargoEditar").html(cadena);
 		}
 	})
 }
@@ -258,4 +258,84 @@ $('#tabla_empleados').on('click','.desactivar',function(){
 	 modificarStatus(data.idempleado,'INACTIVO');
        
 
+})
+
+function editarEmple(id){
+	$.ajax({
+		url: "../controlador/control_listarEditar.php",
+		type: "POST",
+		data:{
+			id
+		}
+	}).done(function(resp){
+	//	alert(resp);  // para ver que datos trae
+		var data=JSON.parse(resp);
+		
+		alert(data);
+		alert(data[0].idempleado);
+		$("#txt_nombreEditar").val(data[0].emp_nombre);
+		$("#txt_nombreEditar").val(data[0].emp_nombre);
+	$("#txt_apellidoEditar").val(data[0].emp_apellido);
+	$("#txt_direccionEditar").val(data[0].emp_direccion);
+	$("#txt_ciudadEditar").val(data[0].emp_ciudad);
+	$("#txt_dniEditar").val(data[0].emp_dni);
+	$("#txt_fechaNEditar").val(data[0].emp_nacimiento);
+	$("#cbm_estadoCivilEditar").val(data[0].emp_estado).trigger("change");
+	$("#txt_ingresoEditar").val(data[0].emp_ingreso);
+	$("#cbm_cargoEditar").val(data[0].sector_idsector).trigger("change");	
+	$("#txt_nombreEsposaEditar").val(data[0].emp_esposa);
+	$("#txt_dniEsposaEditar").val(data[0].emp_esposaDni);
+	$("#txt_movilEsposaEditar").val(data[0].emp_esposaMovil);
+	$("#txt_hijosEditar").val(data[0].emp_hijos);
+	$("#txt_nombreBenefEditar").val(data[0].ex_nombre);
+	$("#txt_dniBenefEditar").val(data[0].ex_dni);
+	$("#txt_direccionBenefEditar").val(data[0].ex_direccion);
+	$("#txt_movilBenefEditar").val(data[0].ex_movil);
+	$("#cbm_registroEditar").val(data[0].ex_moyano).trigger("change");
+	$("#txt_registroEditar").val(data[0].ex_registro);
+	$("#txt_vencimientoEditar").val(data[0].ex_vrencimiento);
+	$("#txt_observacionEditar").val(data[0].ex_observacion);
+		
+	})
+}
+
+
+$('#tabla_empleados').on('click','.editar',function(){
+
+	var data =table.row($(this).parents('tr')).data();
+
+	alert(data.idempleado);
+
+	$("#contenido_principal").load("../vista/empleados/editar_empleado.php");
+
+	
+	editarEmple(data.idempleado);
+
+	
+
+	/* $("#txt_movilEditar").val(data.emp_movil);
+	$("#cbm_sexoEditar").val(data.emp_sexo).trigger("change");
+	$("#txt_nombreEditar").val(data.emp_nombre);
+	$("#txt_apellidoEditar").val(data.emp_apellido);
+	$("#txt_direccionEditar").val(data.emp_direccion);
+	$("#txt_ciudadEditar").val(data.emp_ciudad);
+	$("#txt_dniEditar").val(data.emp_dni);
+	$("#txt_fechaNEditar").val(data.emp_nacimiento);
+	$("#cbm_estadoCivilEditar").val(data.emp_estado).trigger("change");
+	$("#txt_ingresoEditar").val(data.emp_ingreso);
+	$("#cbm_cargoEditar").val(data.sector_idsector).trigger("change");	
+	$("#txt_nombreEsposaEditar").val(data.emp_esposa);
+	$("#txt_dniEsposaEditar").val(data.emp_esposaDni);
+	$("#txt_movilEsposaEditar").val(data.emp_esposaMovil);
+	$("#txt_hijosEditar").val(data.emp_hijos);
+	$("#txt_nombreBenefEditar").val(data.ex_nombre);
+	$("#txt_dniBenefEditar").val(data.ex_dni);
+	$("#txt_direccionBenefEditar").val(data.ex_direccion);
+	$("#txt_movilBenefEditar").val(data.ex_movil);
+	$("#cbm_registroEditar").val(data.ex_moyano).trigger("change");
+	$("#txt_registroEditar").val(data.ex_registro);
+	$("#txt_vencimientoEditar").val(data.ex_vrencimiento);
+	$("#txt_observacionEditar").val(data.ex_observacion);  */
+       
+	
 })

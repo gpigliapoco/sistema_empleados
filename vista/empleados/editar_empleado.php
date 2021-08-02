@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_movilEditar" placeholder="Movil" class="form-control">
+                     <input type="text"  id="txt_movilEditar" placeholder="Movil" class="form-control">
                     </div>
                     <div class="form-group">
                      <label for="">Sexo</label>
@@ -79,7 +79,8 @@
                     </div>
                     <div class="form-group">
                      <label for="">Cargo</label>
-                     <input type="text" name="nombre" id="txt_cargoEditar" class="form-control">
+                     <select class="js-example-basic-single" name="state" id="cbm_cargoEditar" style="width:100%;">
+                                 </select>
                     </div>
 
                   </div>
@@ -209,7 +210,7 @@
 
 //       	alert(file);
 // }
-
+comboRol();
 document.getElementById("seleccionararchivo").addEventListener("change", () => {
             var archivoseleccionado = document.querySelector("#seleccionararchivo");
             var archivos = archivoseleccionado.files;

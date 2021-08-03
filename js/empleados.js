@@ -271,31 +271,33 @@ function editarEmple(id){
 	//	alert(resp);  // para ver que datos trae
 		var data=JSON.parse(resp);
 		
-		alert(data);
-		alert(data[0].idempleado);
-		$("#txt_nombreEditar").val(data[0].emp_nombre);
-		$("#txt_nombreEditar").val(data[0].emp_nombre);
-	$("#txt_apellidoEditar").val(data[0].emp_apellido);
-	$("#txt_direccionEditar").val(data[0].emp_direccion);
-	$("#txt_ciudadEditar").val(data[0].emp_ciudad);
-	$("#txt_dniEditar").val(data[0].emp_dni);
-	$("#txt_fechaNEditar").val(data[0].emp_nacimiento);
-	$("#cbm_estadoCivilEditar").val(data[0].emp_estado).trigger("change");
-	$("#txt_ingresoEditar").val(data[0].emp_ingreso);
-	$("#cbm_cargoEditar").val(data[0].sector_idsector).trigger("change");	
-	$("#txt_nombreEsposaEditar").val(data[0].emp_esposa);
-	$("#txt_dniEsposaEditar").val(data[0].emp_esposaDni);
-	$("#txt_movilEsposaEditar").val(data[0].emp_esposaMovil);
-	$("#txt_hijosEditar").val(data[0].emp_hijos);
-	$("#txt_nombreBenefEditar").val(data[0].ex_nombre);
-	$("#txt_dniBenefEditar").val(data[0].ex_dni);
-	$("#txt_direccionBenefEditar").val(data[0].ex_direccion);
-	$("#txt_movilBenefEditar").val(data[0].ex_movil);
-	$("#cbm_registroEditar").val(data[0].ex_moyano).trigger("change");
-	$("#txt_registroEditar").val(data[0].ex_registro);
-	$("#txt_vencimientoEditar").val(data[0].ex_vrencimiento);
-	$("#txt_observacionEditar").val(data[0].ex_observacion);
+		alert(data[0].emp_foto);
 		
+		$("#txt_idempleado").val(data[0].idempleado);
+		$("#txt_nombreEditar").val(data[0].emp_nombre);
+		$("#txt_nombreEditar").val(data[0].emp_nombre);
+		$("#txt_apellidoEditar").val(data[0].emp_apellido);
+		$("#txt_direccionEditar").val(data[0].emp_direccion);
+		$("#txt_ciudadEditar").val(data[0].emp_ciudad);
+		$("#txt_dniEditar").val(data[0].emp_dni);
+		$("#txt_fechaNEditar").val(data[0].emp_nacimiento);
+		$("#cbm_estadoCivilEditar").val(data[0].emp_estado).trigger("change");
+		$("#txt_ingresoEditar").val(data[0].emp_ingreso);
+		$("#cbm_cargoEditar").val(data[0].sector_idsector).trigger("change");	
+		$("#txt_nombreEsposaEditar").val(data[0].emp_esposa);
+		$("#txt_dniEsposaEditar").val(data[0].emp_esposaDni);
+		$("#txt_movilEsposaEditar").val(data[0].emp_esposaMovil);
+		$("#txt_hijosEditar").val(data[0].emp_hijos);
+		$("#txt_nombreBenefEditar").val(data[0].ex_nombre);
+		$("#txt_dniBenefEditar").val(data[0].ex_dni);
+		$("#txt_direccionBenefEditar").val(data[0].ex_direccion);
+		$("#txt_movilBenefEditar").val(data[0].ex_movil);
+		$("#cbm_registroEditar").val(data[0].ex_moyano).trigger("change");
+		$("#txt_registroEditar").val(data[0].ex_registro);
+		$("#txt_vencimientoEditar").val(data[0].ex_vrencimiento);
+		$("#txt_observacionEditar").val(data[0].ex_observacion);
+		
+
 	})
 }
 

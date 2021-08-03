@@ -17,6 +17,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                      <label for="">Nombre</label>
+                     <input type="text"  id="txt_idempleado"  disabled hidden>
                      <input type="text" name="nombre" id="txt_nombreEditar" placeholder="Nombre" class="form-control">
                     </div>
                     <div class="form-group">
@@ -31,7 +32,7 @@
                     <div class="col-md-3"></div>
                     
                         <div class="card "  >
-                          <img src="./imagenes/avatar.png" class="img-fluid" width="300" id="mostrarimagen">                         
+                          <img src="./imagenes/avatar.png" class="img-fluid" width="300" id="mostrarimagenEditar">                         
                         </div>
                         <div class="col-md-6">
                           <label for="">Foto perfil</label><br>
@@ -211,10 +212,10 @@
 //       	alert(file);
 // }
 comboRol();
-document.getElementById("seleccionararchivo").addEventListener("change", () => {
-            var archivoseleccionado = document.querySelector("#seleccionararchivo");
+ document.getElementById("seleccionararchivoEditar").addEventListener("change", () => {
+            var archivoseleccionado = document.querySelector("#seleccionararchivoEditar");
             var archivos = archivoseleccionado.files;
-            var imagenPrevisualizacion = document.querySelector("#mostrarimagen");
+            var imagenPrevisualizacion = document.querySelector("#mostrarimagenEditar");
             // Si no hay archivos salimos de la función y quitamos la imagen
             if (!archivos || !archivos.length) {
             imagenPrevisualizacion.src = "";
@@ -226,7 +227,7 @@ document.getElementById("seleccionararchivo").addEventListener("change", () => {
             var objectURL = URL.createObjectURL(primerArchivo);
             // Y a la fuente de la imagen le ponemos el objectURL
             imagenPrevisualizacion.src = objectURL;
-        });
+        }); 
     </script>
 
                          

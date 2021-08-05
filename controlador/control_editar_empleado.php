@@ -4,6 +4,7 @@
 
 	    $mu= new modelo_empleados();
         
+        $id = (isset($_POST['id'])) ? $_POST['id'] : '';
         $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
         $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : '';
         $direccion = (isset($_POST['direccion'])) ? $_POST['direccion'] : '';
@@ -32,10 +33,10 @@
        
        
     
-        $consulta=$mu->editar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
+        $consulta=$mu->editar_empleado($id,$nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,
                                                        $ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
                                                        $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,
-                                                   $vencimiento,$observacion,$ruta); 
+                                                   $vencimiento,$observacion); 
 
                    echo $consulta;
            

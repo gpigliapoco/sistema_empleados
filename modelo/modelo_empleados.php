@@ -76,9 +76,9 @@
                  $this->conexion->cerrar();
           }	
 
-          function editar_empleado($nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,$ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
+          function editar_empleado($id,$nombre,$apellido,$direccion,$ciudad,$dni,$movil,$sexo,$nacimiento,$estado,$ingreso,$cargo,$nombreBenef,$direccionBenef,$dniBenef,$movilBenef,
           $nombreEsposa,$dniEsposa,$movilEsposa,$hijos,$registroCombo,$registro,$vencimiento,$observacion){
-              $consulta = "CALL updateEmpleado('$nombre','$apellido','$cargo','$direccion','$ciudad','$dni','$movil','$nacimiento','$sexo','$estado','$ingreso','$nombreEsposa','$dniEsposa','$movilEsposa',
+              $consulta = "CALL updateEmpleado('$id','$nombre','$apellido','$cargo','$direccion','$ciudad','$dni','$movil','$nacimiento','$sexo','$estado','$ingreso','$nombreEsposa','$dniEsposa','$movilEsposa',
                                               '$hijos','$nombreBenef','$dniBenef','$movilBenef','$direccionBenef','$registroCombo','$registro','$vencimiento','$observacion') ";	
               
               $resultado=$this->conexion->conexion->prepare($consulta);

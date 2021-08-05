@@ -344,6 +344,7 @@ $('#tabla_empleados').on('click','.editar',function(){
 
 function updateEmple(){
 
+	var id=$("#txt_idempleado").val();
 	var nombre=$("#txt_nombreEditar").val();
 	var apellido=$("#txt_apellidoEditar").val();
 	var direccion=$("#txt_direccionEditar").val();
@@ -372,6 +373,7 @@ function updateEmple(){
 		url:"../controlador/control_editar_empleado.php",
 		type:"POST",
 		data:{
+			id:id,
 			nombre:nombre,
 			apellido:apellido,
 			direccion:direccion,
@@ -398,19 +400,16 @@ function updateEmple(){
 		}
 	}).done(function(resp){
 
-
+		if(resp>0){
+			Swal.fire({
+				icon: 'success',
+				title: 'Editado',
+				text: 'Datos de Empleado Editados'
+				
+			  });
+			  cargar_contenido('contenido_principal','empleados/vista_empleados.php');
+		}
 
 	})
 
 }
-
-/* CREATE PROCEDURE updateEmpleado (IN id int, IN `nombre` VARCHAR(250), IN `apellido` VARCHAR(250), IN `cargo` INT, IN `direccion` VARCHAR(250), IN `ciudad` VARCHAR(250), IN `dni` INT, IN `movil` INT, IN `nacimiento` DATE, IN `sexo` CHAR(1), IN `estado` VARCHAR(250), IN `ingreso` DATE, IN `nomE` VARCHAR(250), IN `dniE` INT, IN `movilE` INT, IN `hijos` INT, IN `nomB` VARCHAR(250), IN `dniB` INT, IN `movilB` INT, IN `direccionB` VARCHAR(250), IN `moyano` ENUM('s','n'), IN `registro` VARCHAR(250), IN `vencimiento` DATE, IN `observ` VARCHAR(250)) 
-BEGIN
-UPDATE empleado set empleado.emp_nombre=nombre,empleado.emp_apellido=apellido,empleado.emp_direccion=direccion,empleado.emp_ciudad=ciudad,empleado.emp_dni=dni,empleado.emp_movil=movil,empleado.emp_sexo=sexo,empleado.emp_nacimiento=nacimiento,empleado.emp_ingreso=ingreso,empleado.emp_estado=estado,empleado.sector_idsector=cargo,empleado.emp_esposa=nomE,empleado.emp_esposaDni=dniE,empleado.emp_esposaMovil=movilE,empleado.emp_hijos=hijos where empleado.idempleado=id;
-
-UPDATE empleadoextras SET empleadoextras.ex_nombre=nomB,
-                          empleadoextras.ex_dni=dniB,empleadoextras.ex_movil=movilB,empleadoextras.ex_direccion=direccionB,
-                          empleadoextras.ex_registroM=moyano,empleadoextras.ex_registro=registro,empleadoextras.ex_vrencimiento=vencimiento,
-                          empleadoextras.ex_observacion=observ WHERE empleadoextras.empleado_idempleado=id;
-
-END */

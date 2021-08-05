@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-07-2021 a las 17:23:16
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 05-08-2021 a las 05:57:24
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,9 +45,23 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `addSector` (IN `nombre` VARCHAR(45))  INSERT INTO sector(sector) VALUES (nombre)$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `listarEmpleado` ()  SELECT empleado.*,sector.sector,CONCAT(empleado.emp_nombre," ",empleado.emp_apellido)as nombre FROM empleado INNER JOIN sector on empleado.sector_idsector=sector.idsector$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listarEmpleado` ()  SELECT empleado.*,empleadoextras.*,empleado.emp_movil,sector.sector,CONCAT(empleado.emp_nombre," ",empleado.emp_apellido)as nombre FROM empleado INNER JOIN sector on empleado.sector_idsector=sector.idsector 
+ INNER JOIN empleadoextras ON empleadoextras.empleado_idempleado=empleado.idempleado$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listarEmpleados` (IN `id` INT)  SELECT empleado.idempleado,empleado.emp_nombre,empleado.emp_apellido,empleado.emp_direccion,empleado.emp_ciudad,empleado.emp_dni,empleado.emp_movil,empleado.emp_sexo,empleado.emp_nacimiento,empleado.emp_ingreso,
+empleado.emp_estado,empleado.emp_status,empleado.emp_foto,empleado.sector_idsector,empleado.emp_esposa,empleado.emp_esposaDni,empleado.emp_esposaMovil,empleado.emp_hijos,sector.sector,empleadoextras.ex_nombre,
+empleadoextras.ex_dni,empleadoextras.ex_movil,empleadoextras.ex_direccion,empleadoextras.ex_registroM,empleadoextras.ex_registro,empleadoextras.ex_vrencimiento,empleadoextras.ex_observacion,CONCAT(empleado.emp_nombre," ",empleado.emp_apellido)as nombre FROM empleado INNER JOIN sector on sector.idsector=empleado.sector_idsector INNER JOIN empleadoextras on empleadoextras.empleado_idempleado=empleado.idempleado WHERE empleado.idempleado=id$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `listarSector` ()  SELECT * FROM sector$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateEmpleado` (IN `id` INT, IN `nombre` VARCHAR(250), IN `apellido` VARCHAR(250), IN `cargo` INT, IN `direccion` VARCHAR(250), IN `ciudad` VARCHAR(250), IN `dni` INT, IN `movil` INT, IN `nacimiento` DATE, IN `sexo` CHAR(1), IN `estado` VARCHAR(250), IN `ingreso` DATE, IN `nomE` VARCHAR(250), IN `dniE` INT, IN `movilE` INT, IN `hijos` INT, IN `nomB` VARCHAR(250), IN `dniB` INT, IN `movilB` INT, IN `direccionB` VARCHAR(250), IN `moyano` ENUM('s','n'), IN `registro` VARCHAR(250), IN `vencimiento` DATE, IN `observ` VARCHAR(250))  BEGIN
+UPDATE empleado set empleado.emp_nombre=nombre,empleado.emp_apellido=apellido,empleado.emp_direccion=direccion,empleado.emp_ciudad=ciudad,empleado.emp_dni=dni,empleado.emp_movil=movil,empleado.emp_sexo=sexo,empleado.emp_nacimiento=nacimiento,empleado.emp_ingreso=ingreso,empleado.emp_estado=estado,empleado.sector_idsector=cargo,empleado.emp_esposa=nomE,empleado.emp_esposaDni=dniE,empleado.emp_esposaMovil=movilE,empleado.emp_hijos=hijos where empleado.idempleado=id;
+UPDATE empleadoextras SET empleadoextras.ex_nombre=nomB,
+                          empleadoextras.ex_dni=dniB,empleadoextras.ex_movil=movilB,empleadoextras.ex_direccion=direccionB,
+                          empleadoextras.ex_registroM=moyano,empleadoextras.ex_registro=registro,empleadoextras.ex_vrencimiento=vencimiento,
+                          empleadoextras.ex_observacion=observ WHERE empleadoextras.empleado_idempleado=id;
+
+END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `updateStatus` (IN `id` INT, IN `estado` VARCHAR(45))  UPDATE empleado SET empleado.emp_status = estado WHERE empleado.idempleado=id$$
 
@@ -91,7 +105,7 @@ INSERT INTO `empleado` (`idempleado`, `emp_nombre`, `emp_apellido`, `emp_direcci
 (4, 'pao', 'asdasd', 'asdasa', 'asdasd', 0, 416513, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/IMG297202119965.png', 1, '', 0, 0, 0),
 (5, 'pao', 'sadas', 'assdasd', 'asda', 0, 0, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/usuario.png', 1, '', 0, 0, 0),
 (6, 'pedro', 'lopez', 'moldes 5251', 'vicente lopez', 29985934, 2147483647, 'm', '2021-07-13', '2021-07-15', 's', 'activo', 'vista/imagenes/usuario.png', 2, 'PAOLA ', 313147321, 315646513, 3),
-(7, 'asdas', 'adsa', 'asd', 'asd', 646, 0, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/usuario.png', 1, '', 0, 0, 0);
+(7, 'ernesto', 'lopez', 'JOSE MOLDES 5253', 'VICENTE LOPEZ', 29985934, 0, '', '1982-12-05', '1982-12-05', 's', 'activo', 'vista/imagenes/usuario.png', 1, 'pepe', 13123, 12321, 1);
 
 -- --------------------------------------------------------
 
@@ -120,8 +134,8 @@ INSERT INTO `empleadoextras` (`idempleadoExtras`, `ex_nombre`, `ex_dni`, `ex_mov
 (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, ''),
 (2, '', 0, 0, '', 's', '', '0000-00-00', 4, ''),
 (3, '', 0, 0, '', 's', '', '0000-00-00', 5, ''),
-(4, '', 47517322, 215413, 'quesada 3215', 's', '56877135713', '2021-07-05', 6, 'nada'),
-(5, 'PAOLA ', 0, 0, '', 's', '', '0000-00-00', 7, '');
+(4, 'pepe', 47517322, 215413, 'quesada 3215', 's', '56877135713', '2021-07-05', 6, 'nada'),
+(5, 'pepe', 111, 222, 'JOSE MOLDES 5253', '', '13213', '1982-12-05', 7, 'nada');
 
 -- --------------------------------------------------------
 

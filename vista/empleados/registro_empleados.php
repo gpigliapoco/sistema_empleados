@@ -173,7 +173,7 @@
           <!-- nav-tabs-custom -->
         </div>
         <div class="col-lg-12" style="text-align:center">
-       <button class="btn btn-success btn-lg" onclick="Registrar()">Registrar</button>
+       <button class="btn btn-primary btn-lg" style="width:100%" onclick="Registrar()">Registrar</button>
         </div>
             </div>
             <!-- /.box-body -->

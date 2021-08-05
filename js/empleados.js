@@ -19,7 +19,7 @@ function listar_empleados(){
 		  {"data":"idempleado"},
 		  {"data":"emp_foto",
 		  render:function(data,type,row){
-			 return "<img src='../"+data+"' width='80px'> ";
+			 return "<img class='img-circle' src='../"+data+"' width='80px'> ";
 		  }},
 		  {"data":"nombre"},		 
 		  {"data":"emp_dni"},		 	
@@ -139,7 +139,7 @@ function Registrar(){
 
 	     } 
 
-	if(nombre.lenght==0 || apellido.lenght == 0 || dni.lenght ==0 || direccion.lenght==0){
+	if(nombre.length==0 || apellido.length == 0 || dni.length ==0 || direccion.length==0){
 		return Swal.fire("llenar campos vacios","warning");
 	}
 	

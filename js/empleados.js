@@ -5,7 +5,7 @@ function listar_empleados(){
 	table = $("#tabla_empleados").DataTable({
 	  "ordering":false,   
 	  "bLengthChange":false,
-	  "searching": { "regex": false },
+	  "searching": { "regex": true },
 	  "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ],
 	  "pageLength": 10,
 	  "destroy":true,
@@ -55,13 +55,13 @@ function listar_empleados(){
   
   
 
-  document.getElementById("tabla_empleados_filter").style.display="none";
+  /* document.getElementById("tabla_empleados_filter").style.display="none";
   $('input.global_filter').on( 'keyup click', function () {
 	   filterGlobal();
    } );
    $('input.column_filter').on( 'keyup click', function () {
 	   filterColumn( $(this).parents('tr').attr('data-column') );
-   });
+   }); */
  
 
 }
@@ -412,4 +412,54 @@ function updateEmple(){
 
 	})
 
+}
+
+function actualizarfoto(){
+
+	var id=$("#txt_idempleado").val();
+	var foto = $("#seleccionararchivoEditar").val();
+	
+
+	var f=new Date();
+	var extension=foto.split('.').pop(); /// captura la extension
+
+	
+	 let nombreFoto="";
+	
+	if(foto.length>0){	
+		 nombreFoto="IMG"+f.getDate()+""+(f.getMonth()+1)+""+f.getFullYear()+""+f.getHours()+""+f.getMilliseconds()+"."+extension;
+	
+
+	     } 
+
+	if(foto.length==0){
+		return Swal.fire("EL campo esta vacio","warning");
+	}
+	
+	
+	
+	
+
+	var formData= new FormData();
+	var fo = $("#seleccionararchivo")[0].files[0];
+	formData.append('fo',fo);
+	formData.append('nombreFoto',nombreFoto);
+	formData.append('id',id);
+
+	$.ajax({
+		url:'../controlador/control_update_foto.php',
+		type:'post',
+		data:formData,		
+		contentType:false,
+		processData:false,
+		success: function(respuesta){
+			alert(respuesta);
+		
+			if(respuesta ==1){
+				Swal.fire('Foto actualizada','success');
+				
+			}
+		}
+	});
+	return false;
 }

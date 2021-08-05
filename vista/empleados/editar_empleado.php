@@ -1,6 +1,6 @@
 <script type="text/javascript" src="../js/empleados.js?rev=<?php echo time();?>"></script>
 <div class="col-md-12">
-          <div class="box box-warning box-solid">
+          <div class="box box-default box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Editar Datos Empleado</h3>
 
@@ -37,6 +37,8 @@
                         <div class="col-md-6">
                           <label for="">Foto perfil</label><br>
                           <input type="file" class="form-control" id="seleccionararchivoEditar">
+                          <br>
+                          <button class="btn btn-update btn-md" onclick="actualizarfoto()" >actualizar foto</button>
                         </div>
                      
                      
@@ -212,6 +214,7 @@
 //       	alert(file);
 // }
 comboRol();
+
  document.getElementById("seleccionararchivoEditar").addEventListener("change", () => {
             var archivoseleccionado = document.querySelector("#seleccionararchivoEditar");
             var archivos = archivoseleccionado.files;

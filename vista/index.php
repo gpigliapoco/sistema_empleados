@@ -70,38 +70,7 @@
           <!-- Tasks: style can be found in dropdown.less -->
          
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img id="img_nav" class="user-image" alt="User Image">
-             
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img id="img_subnav" class="img-circle" alt="User Image">
-
-                <p>
-               
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-             
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" onclick="AbrirModalPassword()" class="btn btn-default btn-flat">Cambiar password</a>
-                </div>
-                <div class="pull-right">
-                  <a href="../controlador/usuario/control_cerrar_sesion.php" class="btn btn-default btn-flat">Salir</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          
         </ul>
       </div>
     </nav>
@@ -156,7 +125,7 @@
     <section class="content">
         <div class="row" id="contenido_principal">
         <div class="col-md-12">
-          <div class="box box-warning box-solid">
+          <div class="box box-default box-solid">
          
             <div class="box-header with-border">
               <h3 class="box-title">principal</h3>

@@ -3,25 +3,14 @@
     <div class="box box-warning box-solid">
         <div class="box-header with-border">
               <h3 class="box-title">BIENVENIDO A SECTOR </h3>
-
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-            </div>
+              <div class="box-tools pull-right">
+                <button class="btn btn-danger" style="width:100%" onclick="AbrirModalRegistro()"><i class="glyphicon glyphicon-plus"></i>Nuevo Registro</button>
+                </div>
+           
               <!-- /.box-tools -->
         </div>
             <!-- /.box-header -->
-            <div class="form-group">
-                <div class="col-lg-10">
-                <div class="input-group">
-                        <input type="text" class="global_filter form-control" id="global_filter" placeholder="Ingresar dato a buscar">
-                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                <button class="btn btn-danger" style="width:100%" onclick="AbrirModalRegistro()"><i class="glyphicon glyphicon-plus"></i>Nuevo Registro</button>
-                </div>
-            </div>
+            
             <div class="box-body">
             <table id="tabla_sector" class="display responsive nowrap" style="width:100%">
                 <thead>

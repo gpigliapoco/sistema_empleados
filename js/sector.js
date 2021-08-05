@@ -4,7 +4,7 @@ function listar_sector(){
 	 table = $("#tabla_sector").DataTable({
 	  "ordering":false,   
 	  "bLengthChange":false,
-	  "searching": { "regex": false },
+	  "searching": { "regex": true },
 	  "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ],
 	  "pageLength": 10,
 	  "destroy":true,
@@ -25,13 +25,6 @@ function listar_sector(){
   });
   
 
-  document.getElementById("tabla_sector_filter").style.display="none";
-  $('input.global_filter').on( 'keyup click', function () {
-	   filterGlobal();
-   } );
-   $('input.column_filter').on( 'keyup click', function () {
-	   filterColumn( $(this).parents('tr').attr('data-column') );
-   });
  
 
 }

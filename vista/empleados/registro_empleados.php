@@ -1,6 +1,6 @@
 <script type="text/javascript" src="../js/empleados.js?rev=<?php echo time();?>"></script>
 <div class="col-md-12">
-          <div class="box box-warning box-solid">
+          <div class="box box-default box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Registro Empleado</h3>
 

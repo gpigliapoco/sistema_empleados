@@ -174,7 +174,7 @@
           <!-- nav-tabs-custom -->
         </div>
         <div class="col-lg-12" style="text-align:center">
-       <button class="btn btn-success btn-lg" onclick="Editar()">Editar</button>
+       <button class="btn btn-success btn-lg" onclick="updateEmple()">Editar</button>
         </div>
             </div>
             <!-- /.box-body -->

@@ -296,7 +296,7 @@ function editarEmple(id){
 		$("#txt_registroEditar").val(data[0].ex_registro);
 		$("#txt_vencimientoEditar").val(data[0].ex_vrencimiento);
 		$("#txt_observacionEditar").val(data[0].ex_observacion);
-		
+		$("#mostrarimagenEditar").attr("src","../"+data[0].emp_foto);
 
 	})
 }
@@ -341,3 +341,76 @@ $('#tabla_empleados').on('click','.editar',function(){
        
 	
 })
+
+function updateEmple(){
+
+	var nombre=$("#txt_nombreEditar").val();
+	var apellido=$("#txt_apellidoEditar").val();
+	var direccion=$("#txt_direccionEditar").val();
+	var ciudad=$("#txt_ciudadEditar").val();
+	var dni=$("#txt_dniEditar").val();
+	var movil=$("#txt_movilEditar").val();
+	var sexo=$("#cbm_sexoeditar").val();
+	var nacimiento=$("#txt_fechaNEditar").val();
+	var estado=$("#cbm_estadoCivilEditar").val();
+	var ingreso=$("#txt_ingresoEditar").val();
+	var cargo=$("#cbm_cargoEditar").val();	
+	var nombreEsposa=$("#txt_nombreEsposaEditar").val();
+	var dniEsposa=$("#txt_dniEsposaEditar").val();
+	var movilEsposa=$("#txt_movilEsposaEditar").val();
+	var hijos=$("#txt_hijosEditar").val();
+	var nombreBenef=$("#txt_nombreBenefEditar").val();
+	var dniBenef=$("#txt_dniBenefEditar").val();
+	var direccionBenef=$("#txt_direccionBenefEditar").val();
+	var movilBenef=$("#txt_movilBenefEditar").val();
+	var registroCombo=$("#cbm_registroEditar").val();
+	var registro=$("#txt_registroEditar").val();
+	var vencimiento=$("#txt_vencimientoEditar").val();
+	var observacion=$("#txt_observacionEditar").val();
+
+	$.ajax({
+		url:"../controlador/control_editar_empleado.php",
+		type:"POST",
+		data:{
+			nombre:nombre,
+			apellido:apellido,
+			direccion:direccion,
+			ciudad:ciudad,
+			dni:dni,
+			movil:movil,
+			sexo:sexo,
+			nacimiento:nacimiento,
+			estado:estado,
+			ingreso:ingreso,
+			cargo:cargo,
+			nombreEsposa:nombreEsposa,
+			dniEsposa:dniEsposa,
+			movilEsposa:movilEsposa,
+			hijos:hijos,
+			nombreBenef:nombreBenef,
+			dniBenef:dniBenef,
+			direccionBenef:direccionBenef,
+			movilBenef:movilBenef,
+			registroCombo:registroCombo,
+			registro:registro,
+			vencimiento:vencimiento,
+			observacion:observacion
+		}
+	}).done(function(resp){
+
+
+
+	})
+
+}
+
+/* CREATE PROCEDURE updateEmpleado (IN id int, IN `nombre` VARCHAR(250), IN `apellido` VARCHAR(250), IN `cargo` INT, IN `direccion` VARCHAR(250), IN `ciudad` VARCHAR(250), IN `dni` INT, IN `movil` INT, IN `nacimiento` DATE, IN `sexo` CHAR(1), IN `estado` VARCHAR(250), IN `ingreso` DATE, IN `nomE` VARCHAR(250), IN `dniE` INT, IN `movilE` INT, IN `hijos` INT, IN `nomB` VARCHAR(250), IN `dniB` INT, IN `movilB` INT, IN `direccionB` VARCHAR(250), IN `moyano` ENUM('s','n'), IN `registro` VARCHAR(250), IN `vencimiento` DATE, IN `observ` VARCHAR(250)) 
+BEGIN
+UPDATE empleado set empleado.emp_nombre=nombre,empleado.emp_apellido=apellido,empleado.emp_direccion=direccion,empleado.emp_ciudad=ciudad,empleado.emp_dni=dni,empleado.emp_movil=movil,empleado.emp_sexo=sexo,empleado.emp_nacimiento=nacimiento,empleado.emp_ingreso=ingreso,empleado.emp_estado=estado,empleado.sector_idsector=cargo,empleado.emp_esposa=nomE,empleado.emp_esposaDni=dniE,empleado.emp_esposaMovil=movilE,empleado.emp_hijos=hijos where empleado.idempleado=id;
+
+UPDATE empleadoextras SET empleadoextras.ex_nombre=nomB,
+                          empleadoextras.ex_dni=dniB,empleadoextras.ex_movil=movilB,empleadoextras.ex_direccion=direccionB,
+                          empleadoextras.ex_registroM=moyano,empleadoextras.ex_registro=registro,empleadoextras.ex_vrencimiento=vencimiento,
+                          empleadoextras.ex_observacion=observ WHERE empleadoextras.empleado_idempleado=id;
+
+END */

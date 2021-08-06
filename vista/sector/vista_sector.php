@@ -1,7 +1,7 @@
 <script type="text/javascript" src="../js/sector.js?rev=<?php echo time();?>"></script>
 <div class="col-md-12">
     <div class="panel panel-primary">
-        <div class="panel-heading with-border">
+        <div class="panel-heading with-border" style="text-align:center">
               <h3 class="panel-title">BIENVENIDO A SECTOR </h3>
              
            
@@ -12,28 +12,9 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <table id="tabla_sector" class="display responsive nowrap" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>                                            
-                                   
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>                                              
-                                    
-                                </tr>
-                            </tfoot>
-                        </table>   
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel">
-                            <form autocomplete="false" onsubmit="return false">
-                            <div class="panel-content">
-                                <div class="panel-header" style="text-align:center">
+                    <form autocomplete="false" onsubmit="return false">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading" style="text-align:center">
                                 
                                 <h4 class="panel-title"><b>Registrar sector </b></h4>
                                 </div>
@@ -50,7 +31,30 @@
                             </div>
             
                             </form>
-                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading" style="text-align:center">                                
+                                <h4 class="panel-title"><b>Sectores </b></h4>
+                            </div>
+                            <table id="tabla_sector" class="display responsive nowrap" style="width:80%">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nombre</th>                                       
+                                    
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nombre</th>                                              
+                                        
+                                    </tr>
+                                </tfoot>
+                            </table> 
+                        </div>                       
+                                               
                     </div>
                 </div>
             </div>

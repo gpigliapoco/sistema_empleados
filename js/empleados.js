@@ -272,9 +272,10 @@ function editarEmple(id){
 		var data=JSON.parse(resp);
 		
 		alert(data[0].emp_foto);
+		alert(data[0].emp_apellido);
 		
 		$("#txt_idempleado").val(data[0].idempleado);
-		$("#txt_nombreEditar").val(data[0].emp_nombre);
+		
 		$("#txt_nombreEditar").val(data[0].emp_nombre);
 		$("#txt_apellidoEditar").val(data[0].emp_apellido);
 		$("#txt_direccionEditar").val(data[0].emp_direccion);
@@ -282,6 +283,7 @@ function editarEmple(id){
 		$("#txt_dniEditar").val(data[0].emp_dni);
 		$("#txt_fechaNEditar").val(data[0].emp_nacimiento);
 		$("#cbm_estadoCivilEditar").val(data[0].emp_estado).trigger("change");
+		$("#cbm_sexoEditar").val(data[0].emp_sexo).trigger("change");
 		$("#txt_ingresoEditar").val(data[0].emp_ingreso);
 		$("#cbm_cargoEditar").val(data[0].sector_idsector).trigger("change");	
 		$("#txt_nombreEsposaEditar").val(data[0].emp_esposa);
@@ -313,32 +315,7 @@ $('#tabla_empleados').on('click','.editar',function(){
 	
 	editarEmple(data.idempleado);
 
-	
-
-	/* $("#txt_movilEditar").val(data.emp_movil);
-	$("#cbm_sexoEditar").val(data.emp_sexo).trigger("change");
-	$("#txt_nombreEditar").val(data.emp_nombre);
-	$("#txt_apellidoEditar").val(data.emp_apellido);
-	$("#txt_direccionEditar").val(data.emp_direccion);
-	$("#txt_ciudadEditar").val(data.emp_ciudad);
-	$("#txt_dniEditar").val(data.emp_dni);
-	$("#txt_fechaNEditar").val(data.emp_nacimiento);
-	$("#cbm_estadoCivilEditar").val(data.emp_estado).trigger("change");
-	$("#txt_ingresoEditar").val(data.emp_ingreso);
-	$("#cbm_cargoEditar").val(data.sector_idsector).trigger("change");	
-	$("#txt_nombreEsposaEditar").val(data.emp_esposa);
-	$("#txt_dniEsposaEditar").val(data.emp_esposaDni);
-	$("#txt_movilEsposaEditar").val(data.emp_esposaMovil);
-	$("#txt_hijosEditar").val(data.emp_hijos);
-	$("#txt_nombreBenefEditar").val(data.ex_nombre);
-	$("#txt_dniBenefEditar").val(data.ex_dni);
-	$("#txt_direccionBenefEditar").val(data.ex_direccion);
-	$("#txt_movilBenefEditar").val(data.ex_movil);
-	$("#cbm_registroEditar").val(data.ex_moyano).trigger("change");
-	$("#txt_registroEditar").val(data.ex_registro);
-	$("#txt_vencimientoEditar").val(data.ex_vrencimiento);
-	$("#txt_observacionEditar").val(data.ex_observacion);  */
-       
+      
 	
 })
 
@@ -351,7 +328,7 @@ function updateEmple(){
 	var ciudad=$("#txt_ciudadEditar").val();
 	var dni=$("#txt_dniEditar").val();
 	var movil=$("#txt_movilEditar").val();
-	var sexo=$("#cbm_sexoeditar").val();
+	var sexo=$("#cbm_sexoEditar").val();
 	var nacimiento=$("#txt_fechaNEditar").val();
 	var estado=$("#cbm_estadoCivilEditar").val();
 	var ingreso=$("#txt_ingresoEditar").val();

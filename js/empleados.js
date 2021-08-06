@@ -19,7 +19,7 @@ function listar_empleados(){
 		  {"data":"idempleado"},
 		  {"data":"emp_foto",
 		  render:function(data,type,row){
-			 return "<img class='img-circle' src='../"+data+"' width='80px'> ";
+			 return "<img class='img-circle' src='../"+data+"' width='90px' height='90px'> ";
 		  }},
 		  {"data":"nombre"},		 
 		  {"data":"emp_dni"},		 	
@@ -441,7 +441,7 @@ function actualizarfoto(){
 	
 
 	var formData= new FormData();
-	var fo = $("#seleccionararchivo")[0].files[0];
+	var fo = $("#seleccionararchivoEditar")[0].files[0];
 	formData.append('fo',fo);
 	formData.append('nombreFoto',nombreFoto);
 	formData.append('id',id);

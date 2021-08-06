@@ -1,13 +1,10 @@
 <script type="text/javascript" src="../js/empleados.js?rev=<?php echo time();?>"></script>
 <div class="col-md-12">
-          <div class="box box-default box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Editar Datos Empleado</h3>
+          <div class="panel panel-primary" >
+            <div class="panel-heading" style="text-align:center" >
+              <h3 class="panel-title" ><b> EDITAR DATOS DE EMPLEADO</b></h3>
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
+              
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
@@ -38,7 +35,7 @@
                           <label for="">Foto perfil</label><br>
                           <input type="file" class="form-control" id="seleccionararchivoEditar">
                           <br>
-                          <button class="btn btn-update btn-md" onclick="actualizarfoto()" >actualizar foto</button>
+                          <button class="btn btn-primary btn-md" onclick="actualizarfoto()" >actualizar foto</button>
                         </div>
                      
                      
@@ -88,8 +85,8 @@
 
                   </div>
                   <div class="col-lg-12"></div>
-                  <div class="col-lg-12" style="text-align:center">
-                    <b>Datos Del Beneficiario</b>                    
+                  <div class="col-lg-12 " style="text-align:center">
+                  <p class="bg-primary text-white"> <b>Editar Datos Del Beneficiario</b></p>                    
                   </div> 
                     <div class="col-lg-6">
                      <label for="">Nombre</label>
@@ -109,6 +106,7 @@
                     </div>
                     
                     <div class="col-md-12">
+                      <br>
           <!-- Custom Tabs -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">

@@ -2,7 +2,7 @@
 <div class="col-md-12">
     <div class="box box-default box-solid">
         <div class="box-header with-border">
-            <h3 class="box-title">BIENVENIDO A EMPLEADOS</h3>
+            <h3 class="box-title"><b> LISTADO DE EMPLEADOS</b></h3>
 
           
             <div class="box-tools pull-right">

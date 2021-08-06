@@ -27,7 +27,7 @@
                     $ruta='vista/imagenes/'.$nombreFoto;
     
                     $consulta=$mu->updateFoto_empleado($id,$ruta); 
-                                                   echo "movio foto";
+                                                   echo $consulta;
                } 
             }
             

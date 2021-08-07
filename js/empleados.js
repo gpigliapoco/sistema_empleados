@@ -260,6 +260,70 @@ $('#tabla_empleados').on('click','.desactivar',function(){
 
 })
 
+$('#tabla_empleados').on('click','.ver',function(){
+	var data =table.row($(this).parents('tr')).data();
+	verEmple(data.idempleado)
+	
+	$("#modal_persona").modal("show"); 
+       
+
+})
+
+function verEmple(id){
+	$.ajax({
+		url: "../controlador/control_listarEditar.php",
+		type: "POST",
+		data:{
+			id
+		}
+	}).done(function(resp){
+	//	alert(resp);  // para ver que datos trae
+		var data=JSON.parse(resp);
+		alert(data[0].emp_nombre);
+		
+		document.getElementById('label_nombre').innerText = data[0].emp_nombre;
+		document.getElementById('label_apellido').innerText = data[0].emp_apellido;
+		document.getElementById('label_direccion').innerText = data[0].emp_direccion;
+		document.getElementById('label_ciudad').innerText = data[0].emp_ciudad;
+		document.getElementById('label_dni').innerText = data[0].emp_dni;
+		document.getElementById('label_movil').innerText = data[0].emp_movil;
+		document.getElementById('label_nacimiento').innerText = data[0].emp_nacimiento;
+		document.getElementById('label_ingreso').innerText = data[0].emp_ingreso;
+		$("#mostrarimagenCard").attr("src","../"+data[0].emp_foto);
+		document.getElementById('label_nombreB').innerText = data[0].ex_nombre;
+		document.getElementById('label_direccionB').innerText = data[0].ex_direccion;
+		document.getElementById('label_dniB').innerText = data[0].ex_dni;
+		document.getElementById('label_movilB').innerText = data[0].ex_movil;
+
+		
+		
+	/* 	$("#txt_nombreEditar").val(data[0].emp_nombre);
+		$("#txt_apellidoEditar").val(data[0].emp_apellido);
+		$("#txt_direccionEditar").val(data[0].emp_direccion);
+		$("#txt_ciudadEditar").val(data[0].emp_ciudad);
+		$("#txt_dniEditar").val(data[0].emp_dni);
+		$("#txt_fechaNEditar").val(data[0].emp_nacimiento);
+		$("#cbm_estadoCivilEditar").val(data[0].emp_estado).trigger("change");
+		$("#cbm_sexoEditar").val(data[0].emp_sexo).trigger("change");
+		$("#txt_ingresoEditar").val(data[0].emp_ingreso);
+		$("#cbm_cargoEditar").val(data[0].sector_idsector).trigger("change");	
+		$("#txt_nombreEsposaEditar").val(data[0].emp_esposa);
+		$("#txt_dniEsposaEditar").val(data[0].emp_esposaDni);
+		$("#txt_movilEsposaEditar").val(data[0].emp_esposaMovil);
+		$("#txt_hijosEditar").val(data[0].emp_hijos);
+		$("#txt_nombreBenefEditar").val(data[0].ex_nombre);
+		$("#txt_dniBenefEditar").val(data[0].ex_dni);
+		$("#txt_direccionBenefEditar").val(data[0].ex_direccion);
+		$("#txt_movilBenefEditar").val(data[0].ex_movil);
+		$("#cbm_registroEditar").val(data[0].ex_moyano).trigger("change");
+		$("#txt_registroEditar").val(data[0].ex_registro);
+		$("#txt_vencimientoEditar").val(data[0].ex_vrencimiento);
+		$("#txt_observacionEditar").val(data[0].ex_observacion);
+		$("#mostrarimagenEditar").attr("src","../"+data[0].emp_foto); */
+
+	})
+}
+
 function editarEmple(id){
 	$.ajax({
 		url: "../controlador/control_listarEditar.php",
@@ -281,6 +345,7 @@ function editarEmple(id){
 		$("#txt_direccionEditar").val(data[0].emp_direccion);
 		$("#txt_ciudadEditar").val(data[0].emp_ciudad);
 		$("#txt_dniEditar").val(data[0].emp_dni);
+		$("#txt_movilEditar").val(data[0].emp_movil);
 		$("#txt_fechaNEditar").val(data[0].emp_nacimiento);
 		$("#cbm_estadoCivilEditar").val(data[0].emp_estado).trigger("change");
 		$("#cbm_sexoEditar").val(data[0].emp_sexo).trigger("change");

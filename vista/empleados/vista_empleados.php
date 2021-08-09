@@ -49,7 +49,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header text-center">                    
-                    <h4 class="modal-title"><b>DATOS DE EMPLEADO</b></h4>
+                    <h4 class="modal-title bg-primary"><b>DATOS DE EMPLEADO</b></h4>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -57,62 +57,96 @@
                           <img src="./imagenes/avatar.png" class="img-fluid" width="300" id="mostrarimagenCard">                         
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-4">
                         <div class="modal-body">
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4> Nombre</h4> </label>
-                                    <div class="col-sm-6 text-left">
+                               <label for="" class="col-sm-4 col-form-label"><h4> Nombre</h4> </label>
+                                    <div class="col-sm-8 text-left">
                                         <h4><label for="" id="label_nombre" class="form-control-plaintext "></label></h4> 
                                     </div>
                             </div>
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4> Apellido</h4> </label>
-                                    <div class="col-sm-6">
+                               <label for="" class="col-sm-4 col-form-label"><h4> Apellido</h4> </label>
+                                    <div class="col-sm-8">
                                         <h4><label for="" id="label_apellido" class="form-control-plaintext"></label></h4> 
                                     </div>
                             </div> 
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4> Direccion</h4> </label>
-                                    <div class="col-sm-6">
+                               <label for="" class="col-sm-4 col-form-label"><h4> Direccion</h4> </label>
+                                    <div class="col-sm-8">
                                         <h4><label for="" id="label_direccion" class="form-control-plaintext"></label></h4> 
                                     </div>
                             </div> 
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4>Ciudad</h4> </label>
-                                    <div class="col-sm-6">
+                               <label for="" class="col-sm-4 col-form-label"><h4>Ciudad</h4> </label>
+                                    <div class="col-sm-8">
                                         <h4><label for="" id="label_ciudad" class="form-control-plaintext"></label></h4> 
                                     </div>
                             </div> 
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4>D.N.I</h4> </label>
-                                    <div class="col-sm-6">
+                               <label for="" class="col-sm-4 col-form-label"><h4>D.N.I</h4> </label>
+                                    <div class="col-sm-8">
                                         <h4><label for="" id="label_dni" class="form-control-plaintext"></label></h4> 
                                     </div>
                             </div>
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4>Movil</h4> </label>
-                                    <div class="col-sm-6">
+                               <label for="" class="col-sm-4 col-form-label"><h4>Movil</h4> </label>
+                                    <div class="col-sm-8">
                                         <h4><label for="" id="label_movil" class="form-control-plaintext"></label></h4> 
                                     </div>
                             </div>    
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4>Fecha nacimiento</h4> </label>
-                                    <div class="col-sm-6">
+                               <label for="" class="col-sm-4 col-form-label"><h4>Fecha nacimiento</h4> </label>
+                                    <div class="col-sm-8">
                                         <h4><label for="" id="label_nacimiento" class="form-control-plaintext"></label></h4> 
                                     </div>
                             </div>    
                             <div class="row">
-                               <label for="" class="col-sm-3 col-form-label"><h4>Fecha Ingreso</h4> </label>
-                                    <div class="col-sm-6">
+                               <label for="" class="col-sm-4 col-form-label"><h4>Fecha Ingreso</h4> </label>
+                                    <div class="col-sm-8">
                                         <h4><label for="" id="label_ingreso" class="form-control-plaintext"></label></h4> 
                                     </div>
                             </div>                              
                   
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="modal-body">
+                            <div class="row ">
+                               <label for="" class="col-sm-4 col-form-label "><h4>Estado</h4> </label>
+                                    <div class="col-sm-8 text-left">
+                                        <h4><label for="" id="label_estado" class="form-control-plaintext "></label></h4> 
+                                    </div>
+                            </div>
+                            <div class="row">
+                               <label for="" class="col-sm-4 col-form-label "><h4>Esposa</h4> </label>
+                                    <div class="col-sm-8 text-left">
+                                        <h4><label for="" id="label_nombreE" class="form-control-plaintext "></label></h4> 
+                                    </div>
+                            </div>
+                            <div class="row">
+                               <label for="" class="col-sm-4 col-form-label "><h4>D.N.I</h4> </label>
+                                    <div class="col-sm-8 text-left">
+                                        <h4><label for="" id="label_dniE" class="form-control-plaintext "></label></h4> 
+                                    </div>
+                            </div>
+                            <div class="row">
+                               <label for="" class="col-sm-4 col-form-label "><h4>Movil</h4> </label>
+                                    <div class="col-sm-8 text-left">
+                                        <h4><label for="" id="label_movilE" class="form-control-plaintext "></label></h4> 
+                                    </div>
+                            </div>
+                            <div class="row">
+                               <label for="" class="col-sm-4 col-form-label "><h4>Hijod</h4> </label>
+                                    <div class="col-sm-8 text-left">
+                                        <h4><label for="" id="label_hijos" class="form-control-plaintext "></label></h4> 
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>         
                 <div class="modal-header text-center">                    
-                    <h4 class="modal-title"><b>DATOS DE BENEFICIARIO</b></h4>
+                    <h4 class="modal-title bg-primary"><b>DATOS DE BENEFICIARIO</b></h4>
                 </div> 
                 <div class="row">
                     <div class="col-md-6">

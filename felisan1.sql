@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-08-2021 a las 05:57:24
+-- Tiempo de generación: 09-08-2021 a las 05:19:40
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.8
 
@@ -63,6 +63,8 @@ UPDATE empleadoextras SET empleadoextras.ex_nombre=nomB,
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateFotoEmpleado` (IN `id` INT, IN `ruta` VARCHAR(250))  UPDATE empleado SET empleado.emp_foto=ruta WHERE empleado.idempleado=id$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `updateStatus` (IN `id` INT, IN `estado` VARCHAR(45))  UPDATE empleado SET empleado.emp_status = estado WHERE empleado.idempleado=id$$
 
 DELIMITER ;
@@ -104,7 +106,7 @@ INSERT INTO `empleado` (`idempleado`, `emp_nombre`, `emp_apellido`, `emp_direcci
 (3, 'leo', 'piglia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'activo', 'vista/imagenes/usuario.png', 1, NULL, NULL, NULL, NULL),
 (4, 'pao', 'asdasd', 'asdasa', 'asdasd', 0, 416513, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/IMG297202119965.png', 1, '', 0, 0, 0),
 (5, 'pao', 'sadas', 'assdasd', 'asda', 0, 0, 'm', '0000-00-00', '0000-00-00', 's', 'activo', 'vista/imagenes/usuario.png', 1, '', 0, 0, 0),
-(6, 'pedro', 'lopez', 'moldes 5251', 'vicente lopez', 29985934, 2147483647, 'm', '2021-07-13', '2021-07-15', 's', 'activo', 'vista/imagenes/usuario.png', 2, 'PAOLA ', 313147321, 315646513, 3),
+(6, 'pedro', 'lopez', 'moldes 5251', 'vicente lopez', 29985934, 2147483647, 'm', '2021-07-13', '2021-07-15', 's', 'activo', 'vista/imagenes/IMG58202119229.jpg', 2, 'PAOLA ', 313147321, 315646513, 3),
 (7, 'ernesto', 'lopez', 'JOSE MOLDES 5253', 'VICENTE LOPEZ', 29985934, 0, '', '1982-12-05', '1982-12-05', 's', 'activo', 'vista/imagenes/usuario.png', 1, 'pepe', 13123, 12321, 1);
 
 -- --------------------------------------------------------

@@ -279,7 +279,7 @@ function verEmple(id){
 	}).done(function(resp){
 	//	alert(resp);  // para ver que datos trae
 		var data=JSON.parse(resp);
-		alert(data[0].emp_nombre);
+		//alert(data[0].emp_nombre);
 		
 		document.getElementById('label_nombre').innerText = data[0].emp_nombre;
 		document.getElementById('label_apellido').innerText = data[0].emp_apellido;
@@ -294,32 +294,18 @@ function verEmple(id){
 		document.getElementById('label_direccionB').innerText = data[0].ex_direccion;
 		document.getElementById('label_dniB').innerText = data[0].ex_dni;
 		document.getElementById('label_movilB').innerText = data[0].ex_movil;
-
+		document.getElementById('label_nombreE').innerText = data[0].emp_esposa;
+		document.getElementById('label_dniE').innerText = data[0].emp_esposaDni;
+		document.getElementById('label_movilE').innerText = data[0].emp_esposaMovil;		
+		document.getElementById('label_hijos').innerText = data[0].emp_hijos;
+		if(data[0].emp_estado=="s"){
+			document.getElementById('label_estado').innerText = 'soltero';
+			
+		}else{
+			document.getElementById('label_estado').innerText = "casado";	
+		}
 		
 		
-	/* 	$("#txt_nombreEditar").val(data[0].emp_nombre);
-		$("#txt_apellidoEditar").val(data[0].emp_apellido);
-		$("#txt_direccionEditar").val(data[0].emp_direccion);
-		$("#txt_ciudadEditar").val(data[0].emp_ciudad);
-		$("#txt_dniEditar").val(data[0].emp_dni);
-		$("#txt_fechaNEditar").val(data[0].emp_nacimiento);
-		$("#cbm_estadoCivilEditar").val(data[0].emp_estado).trigger("change");
-		$("#cbm_sexoEditar").val(data[0].emp_sexo).trigger("change");
-		$("#txt_ingresoEditar").val(data[0].emp_ingreso);
-		$("#cbm_cargoEditar").val(data[0].sector_idsector).trigger("change");	
-		$("#txt_nombreEsposaEditar").val(data[0].emp_esposa);
-		$("#txt_dniEsposaEditar").val(data[0].emp_esposaDni);
-		$("#txt_movilEsposaEditar").val(data[0].emp_esposaMovil);
-		$("#txt_hijosEditar").val(data[0].emp_hijos);
-		$("#txt_nombreBenefEditar").val(data[0].ex_nombre);
-		$("#txt_dniBenefEditar").val(data[0].ex_dni);
-		$("#txt_direccionBenefEditar").val(data[0].ex_direccion);
-		$("#txt_movilBenefEditar").val(data[0].ex_movil);
-		$("#cbm_registroEditar").val(data[0].ex_moyano).trigger("change");
-		$("#txt_registroEditar").val(data[0].ex_registro);
-		$("#txt_vencimientoEditar").val(data[0].ex_vrencimiento);
-		$("#txt_observacionEditar").val(data[0].ex_observacion);
-		$("#mostrarimagenEditar").attr("src","../"+data[0].emp_foto); */
 
 	})
 }

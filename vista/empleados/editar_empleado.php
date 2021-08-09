@@ -8,22 +8,22 @@
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
-            <form onsubmit="return false" method="POST" action="#" enctype="multipart/form-data">
+            <form onsubmit="return false" class="needs-validation" novalidate method="POST" action="#" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                      <label for="">Nombre</label>
                      <input type="text"  id="txt_idempleado"  disabled hidden>
-                     <input type="text" name="nombre" id="txt_nombreEditar" placeholder="Nombre" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombreEditar" placeholder="Nombre" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Direccion</label>
-                     <input type="text" name="nombre" id="txt_direccionEditar" placeholder="Direccion" class="form-control">
+                     <input type="text" name="nombre" id="txt_direccionEditar" placeholder="Direccion" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Documento</label>
-                     <input type="text" name="nombre" id="txt_dniEditar" placeholder="Documento" class="form-control">
+                     <input type="text" name="nombre" id="txt_dniEditar" placeholder="Documento" class="form-control" required>
                     </div>
                     <div class="form-group">
                     <div class="col-md-3"></div>
@@ -45,15 +45,15 @@
                   <div class="col-md-6">
                     <div class="form-group">
                      <label for="">Apellido</label>
-                     <input type="text" name="nombre" id="txt_apellidoEditar" placeholder="Apellido" class="form-control">
+                     <input type="text" name="nombre" id="txt_apellidoEditar" placeholder="Apellido" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Ciudad</label>
-                     <input type="text" name="nombre" id="txt_ciudadEditar" placeholder="Ciudad" class="form-control">
+                     <input type="text" name="nombre" id="txt_ciudadEditar" placeholder="Ciudad" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Movil</label>
-                     <input type="text"  id="txt_movilEditar" placeholder="Movil" class="form-control">
+                     <input type="text"  id="txt_movilEditar" placeholder="Movil" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Sexo</label>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                      <label for="">Fecha de nacimiento</label>
-                     <input type="date" name="nombre" id="txt_fechaNEditar" class="form-control">
+                     <input type="date" name="nombre" id="txt_fechaNEditar" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Estado Civil</label>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                      <label for="">Fecha Ingreso</label>
-                     <input type="date" name="nombre" id="txt_ingresoEditar" class="form-control">
+                     <input type="date" name="nombre" id="txt_ingresoEditar" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Cargo</label>
@@ -90,7 +90,7 @@
                   </div> 
                     <div class="col-lg-6">
                      <label for="">Nombre</label>
-                     <input type="text" name="nombre" id="txt_nombreBenefEditar" placeholder="Nombre" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombreBenefEditar" placeholder="Nombre" class="form-control" required>
                     </div>
                     <div class="col-lg-6">
                      <label for="">Documento</label>
@@ -98,11 +98,11 @@
                     </div>
                     <div class="col-lg-6">
                      <label for="">Direccion</label>
-                     <input type="text" name="nombre" id="txt_direccionBenefEditar" placeholder="Direccion" class="form-control">
+                     <input type="text" name="nombre" id="txt_direccionBenefEditar" placeholder="Direccion" class="form-control" required>
                     </div>
                     <div class="col-lg-6">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_movilBenefEditar" placeholder="Movil" class="form-control">
+                     <input type="text" name="nombre" id="txt_movilBenefEditar" placeholder="Movil" class="form-control" required>
                     </div>
                     
                     <div class="col-md-12">
@@ -211,6 +211,26 @@
 
 //       	alert(file);
 // }
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
 comboRol();
 
  document.getElementById("seleccionararchivoEditar").addEventListener("change", () => {

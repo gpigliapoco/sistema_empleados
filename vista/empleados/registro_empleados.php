@@ -8,21 +8,21 @@
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
-            <form onsubmit="return false" method="POST" action="#" enctype="multipart/form-data">
+            <form onsubmit="return false" class="needs-validation" novalidate method="POST" action="#" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                      <label for="">Nombre</label>
-                     <input type="text" name="nombre" id="txt_nombre" placeholder="Nombre" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombre" placeholder="Nombre" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Direccion</label>
-                     <input type="text" name="nombre" id="txt_direccion" placeholder="Direccion" class="form-control" >
+                     <input type="text" name="nombre" id="txt_direccion" placeholder="Direccion" class="form-control"required >
                     </div>
                     <div class="form-group">
                      <label for="">Documento</label>
-                     <input type="text" name="nombre" id="txt_dni" placeholder="Documento" class="form-control" onkeypress="return soloNumeros(event)">
+                     <input type="text" name="nombre" id="txt_dni" placeholder="Documento" class="form-control" onkeypress="return soloNumeros(event)" required>
                     </div>
                     <div class="form-group">
                     <div class="col-md-3"></div>
@@ -42,7 +42,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                      <label for="">Apellido</label>
-                     <input type="text" name="nombre" id="txt_apellido" placeholder="Apellido" class="form-control">
+                     <input type="text" name="nombre" id="txt_apellido" placeholder="Apellido" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Ciudad</label>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_movil" placeholder="Movil" class="form-control" onkeypress="return soloNumeros(event)">
+                     <input type="text" name="nombre" id="txt_movil" placeholder="Movil" class="form-control" onkeypress="return soloNumeros(event)" required>
                     </div>
                     <div class="form-group">
                      <label for="">Sexo</label>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group">
                      <label for="">Fecha de nacimiento</label>
-                     <input type="date" name="nombre" id="txt_fechaN" class="form-control">
+                     <input type="date" name="nombre" id="txt_fechaN" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Estado Civil</label>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group">
                      <label for="">Fecha Ingreso</label>
-                     <input type="date" name="nombre" id="txt_ingreso" class="form-control">
+                     <input type="date" name="nombre" id="txt_ingreso" class="form-control" required>
                     </div>
                     <div class="form-group">
                      <label for="">Cargo</label>
@@ -88,7 +88,7 @@
                   </div> 
                     <div class="col-lg-6">
                      <label for="">Nombre</label>
-                     <input type="text" name="nombre" id="txt_nombreBenef" placeholder="Nombre" class="form-control">
+                     <input type="text" name="nombre" id="txt_nombreBenef" placeholder="Nombre" class="form-control" required>
                     </div>
                     <div class="col-lg-6">
                      <label for="">Documento</label>
@@ -96,11 +96,11 @@
                     </div>
                     <div class="col-lg-6">
                      <label for="">Direccion</label>
-                     <input type="text" name="nombre" id="txt_direccionBenef" placeholder="Direccion" class="form-control">
+                     <input type="text" name="nombre" id="txt_direccionBenef" placeholder="Direccion" class="form-control" required>
                     </div>
                     <div class="col-lg-6">
                      <label for="">Movil</label>
-                     <input type="text" name="nombre" id="txt_movilBenef" placeholder="Movil" class="form-control" onkeypress="return soloNumeros(event)">
+                     <input type="text" name="nombre" id="txt_movilBenef" placeholder="Movil" class="form-control" onkeypress="return soloNumeros(event)"required>
                     </div>
                     
                     <div class="col-md-12">
@@ -172,7 +172,7 @@
           <!-- nav-tabs-custom -->
         </div>
         <div class="col-lg-12" style="text-align:center">
-       <button class="btn btn-primary btn-lg" style="width:100%" onclick="Registrar()">Registrar</button>
+       <button class="btn btn-primary btn-lg" style="width:100%"  onclick="Registrar()">Registrar</button>
         </div>
             </div>
             <!-- /.box-body -->
@@ -209,6 +209,27 @@
 
 //       	alert(file);
 // }
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
 
 comboRol();
 

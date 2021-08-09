@@ -36,9 +36,9 @@ function listar_empleados(){
 			{"data":"emp_status",
 			render:function(data,type,row){
 				if(data=='activo'){
-					return "<button style='font-size:13px;' type='button' class='desactivar btn btn-danger'><i class='fa fa-times'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success' disabled><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='ver btn btn-primary'><i class='fa fa-eye'></i></button>";
+					return "<button style='font-size:13px;' type='button' class='desactivar btn btn-danger'><i class='fa fa-times'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success' disabled><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='ver btn btn-primary' data-bs-toggle='modal' data-bs-target='#modal_persona'><i class='fa fa-eye'></i></button>";
 				}else{
-					return "<button style='font-size:13px;' type='button' class='desactivar btn btn-danger' disabled><i class='fa fa-times'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success'><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='ver btn btn-primary'><i class='fa fa-eye'></i></button>";
+					return "<button style='font-size:13px;' type='button' class='desactivar btn btn-danger' disabled><i class='fa fa-times'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='activar btn btn-success'><i class='fa fa-check'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>&nbsp;<button style='font-size:13px;' type='button' class='ver btn btn-primary' data-bs-toggle='modal' data-bs-target='#modal_persona'><i class='fa fa-eye'></i></button>";
 				}
 			}},	
 		  
@@ -139,8 +139,9 @@ function Registrar(){
 
 	     } 
 
-	if(nombre.length==0 || apellido.length == 0 || dni.length ==0 || direccion.length==0){
-		return Swal.fire("llenar campos vacios","warning");
+	if(nombre.length==0 || apellido.length == 0 || dni.length ==0 || direccion.length==0 || ciudad.length==0 || movil.length==0 || ingreso.length==0 || nacimiento.length==0 || nombreBenef.length==0 || direccionBenef.length==0 || movilBenef.length==0){
+			return;
+		//	return Swal.fire("llenar campos vacios","warning");
 	}
 	
 	
@@ -264,8 +265,8 @@ $('#tabla_empleados').on('click','.ver',function(){
 	var data =table.row($(this).parents('tr')).data();
 	verEmple(data.idempleado)
 	
-	$("#modal_persona").modal("show"); 
-       
+	//$("#modal_persona").modal("show"); 
+
 
 })
 
@@ -396,6 +397,11 @@ function updateEmple(){
 	var registro=$("#txt_registroEditar").val();
 	var vencimiento=$("#txt_vencimientoEditar").val();
 	var observacion=$("#txt_observacionEditar").val();
+
+	if(nombre.length==0 || apellido.length == 0 || dni.length ==0 || direccion.length==0 || ciudad.length==0 || movil.length==0 || ingreso.length==0 || nacimiento.length==0 || nombreBenef.length==0 || direccionBenef.length==0 || movilBenef.length==0){
+		return;
+	//	return Swal.fire("llenar campos vacios","warning");
+	}
 
 	$.ajax({
 		url:"../controlador/control_editar_empleado.php",
